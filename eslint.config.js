@@ -6,23 +6,21 @@ import pluginPrettier from 'eslint-plugin-prettier'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-	eslint.configs.recommended,
-	prettier,
+	eslint.configs.recommended, // Configurazione di base di ESLint
+	pluginReact.configs.flat.recommended, // Configurazione di React
+	{
+		files: ['**/*.{js,mjs,cjs,jsx}'], // Applica solo a questi file
+		languageOptions: {
+			globals: globals.browser, // Aggiungi i globali del browser
+		},
+	},
 	{
 		plugins: {
-			prettier: pluginPrettier,
+			prettier: pluginPrettier, // Aggiungi il plugin Prettier
 		},
 		rules: {
-			'prettier/prettier': ['error', { semi: false }], // Disabilita i punti e virgola
+			'prettier/prettier': ['error', { semi: false }], // Regola di Prettier
 		},
 	},
-	{
-		files: ['**/*.{js,mjs,cjs,jsx}'],
-	},
-	{
-		languageOptions: {
-			globals: globals.browser,
-		},
-	},
-	pluginReact.configs.flat.recommended,
+	prettier, // Deve essere l'ultimo per disabilitare le regole conflittuali
 ]

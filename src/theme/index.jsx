@@ -1,12 +1,22 @@
-import { createSystem, defaultConfig } from '@chakra-ui/react'
+import { createSystem, defaultConfig, defineConfig, defineRecipe } from '@chakra-ui/react'
+import buttonRecipe from './base/button'
+import colorsToken from './tokens/colorsToken'
 
-export const system = createSystem(defaultConfig, {
+const customConfig = defineConfig({
 	theme: {
+		recipes: {
+			button: defineRecipe(buttonRecipe),
+		},
 		tokens: {
+			colors: {
+				primary: { value: '#082046' },
+			},
 			fonts: {
-				heading: { value: `'Figtree', sans-serif` },
-				body: { value: `'Figtree', sans-serif` },
+				body: 'Roboto, sans-serif',
+				heading: 'Roboto, sans-serif',
 			},
 		},
 	},
 })
+
+export const system = createSystem(defaultConfig, customConfig)

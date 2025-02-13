@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Box, Image, HStack, Text } from '@chakra-ui/react'
+import { Button, Image, HStack, Text } from '@chakra-ui/react'
 import { SITE_NAME } from '../../utils/global.variables'
 
 const Header = () => {
@@ -14,6 +14,7 @@ const Header = () => {
 				<Button>Servizi</Button>
 				<Button>Prodotti</Button>
 			</HStack>
+			<Button>PRENOTA ORA</Button>
 		</HStack>
 	)
 }
