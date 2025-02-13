@@ -1,5 +1,4 @@
 import globals from 'globals'
-import pluginJs from '@eslint/js'
 import pluginReact from 'eslint-plugin-react'
 import eslint from '@eslint/js'
 import prettier from 'eslint-config-prettier'
@@ -25,6 +24,5 @@ export default [
 			globals: globals.browser,
 		},
 	},
-	pluginJs.configs.recommended,
 	pluginReact.configs.flat.recommended,
 ]
