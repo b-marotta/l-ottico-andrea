@@ -20,6 +20,7 @@ export default [
 		},
 		rules: {
 			'prettier/prettier': ['error', { semi: false }], // Regola di Prettier
+			'no-console': ['error', { allow: ['warn', 'error'] }],
 		},
 	},
 	prettier, // Deve essere l'ultimo per disabilitare le regole conflittuali
