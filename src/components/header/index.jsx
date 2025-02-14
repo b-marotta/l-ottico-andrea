@@ -48,7 +48,7 @@ const Header = () => {
 					return (
 						<Button
 							key={index}
-							className={isCurrent ? 'active' : ''}
+							className={(isCurrent ? 'active' : '') && (isOnTop ? ' top' : '')}
 							as={Link}
 							to={route.path}
 							textStyle={'lg'}
