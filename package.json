@@ -9,22 +9,10 @@
 		"serve": "vite preview --open",
 		"test": "vitest",
 		"format": "prettier --write .",
-		"pre-commit": "lint-staged",
 		"prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+		"lint:fix": "npm run lint --fix",
 		"prepare": "husky install"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"./src/*.{js,jsx,ts,tsx}": [
-			"npm run prettier",
-			"eslint --fix",
-			"npm run lint"
-		]
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^3.8.0",
