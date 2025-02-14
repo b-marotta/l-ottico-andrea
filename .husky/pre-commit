@@ -6,3 +6,4 @@ npm run lint:fix
 
 echo "done"
 exit 1
+```
