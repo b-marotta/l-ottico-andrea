@@ -10,10 +10,10 @@
 		"test": "vitest",
 		"format": "prettier --write .",
 		"prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
-		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-		"lint:fix": "npm run lint --fix",
 		"prepare": "husky",
-		"post-install": "husky install"
+		"postinstall": "husky install",
+		"lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --no-error-on-unmatched-pattern",
+		"precommit": "npm run lint"
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^3.8.0",
