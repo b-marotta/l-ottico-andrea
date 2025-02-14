@@ -9,15 +9,20 @@
 		"serve": "vite preview --open",
 		"test": "vitest",
 		"format": "prettier --write .",
-		"pre-commit": "lint-staged"
+		"pre-commit": "lint-staged",
+		"prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx}": [
-			"eslint --fix",
-			"prettier --write"
-		],
-		"*.{json,md,html,css,scss}": [
-			"prettier --write"
+		"./src/*.{js,jsx,ts,tsx}": [
+			"npm run prettier",
+			"npm run lint",
+			"git add"
 		]
 	},
 	"dependencies": {
