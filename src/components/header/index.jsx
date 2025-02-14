@@ -26,9 +26,6 @@ const Header = () => {
 		}
 	}, [])
 
-	console.log(isOnTop)
-	console.log(isOnTop)
-
 	return (
 		<HStack
 			justifyContent={'space-between'}

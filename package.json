@@ -12,7 +12,7 @@
 		"prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
 		"prepare": "husky",
 		"postinstall": "husky install",
-		"lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --no-error-on-unmatched-pattern",
+		"lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
 		"precommit": "npm run lint"
 	},
 	"dependencies": {
