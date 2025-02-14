@@ -3,6 +3,8 @@ export default {
 		borderRadius: 'none',
 		lineHeight: 'normal',
 		height: 'auto',
+		px: '7',
+		py: '3',
 	},
 	variants: {
 		size: {
@@ -17,8 +19,6 @@ export default {
 		},
 		variant: {
 			solid: {
-				px: '6',
-				py: '3',
 				bg: 'primary',
 				color: 'white',
 				fontWeight: '700',
@@ -26,6 +26,12 @@ export default {
 				_hover: {
 					bg: 'primary.light',
 				},
+				px: '7',
+				py: '3',
+			},
+			outline: {
+				px: '7',
+				py: '3',
 			},
 			header: {
 				bg: 'transparent',
