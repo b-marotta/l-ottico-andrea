@@ -11,7 +11,8 @@
 		"format": "prettier --write .",
 		"pre-commit": "lint-staged",
 		"prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
-		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color"
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+		"prepare": "husky install"
 	},
 	"husky": {
 		"hooks": {
@@ -21,8 +22,8 @@
 	"lint-staged": {
 		"./src/*.{js,jsx,ts,tsx}": [
 			"npm run prettier",
-			"npm run lint",
-			"git add"
+			"eslint --fix",
+			"npm run lint"
 		]
 	},
 	"dependencies": {
