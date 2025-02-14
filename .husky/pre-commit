@@ -1,9 +1,5 @@
-. "$(dirname "$0")/_/h"
+npm run lint:fix && npm add .
 
-echo "Running lint-staged..."
+echo "Husky - pre-commit hook finished"
 
-npm run lint:fix
-
-echo "done"
-exit 1
-```
+exit 0
