@@ -3,10 +3,9 @@ import './App.css'
 import Header from './components/header'
 import { Helmet } from 'react-helmet'
 import { SITE_DESCRIPTION, SITE_NAME } from './utils/global.variables'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Home from './pages/home'
-import Servizi from './pages/servizi'
-import Prodotti from './pages/prodotti'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import routes from './utils/routes'
+import ScrollToTop from './components/scroll-to-top'
 
 const App = () => {
 	return (
@@ -17,18 +16,19 @@ const App = () => {
 					<meta name="description" content={SITE_DESCRIPTION} />
 
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 					<link
-						href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 						rel="stylesheet"
 					/>
 				</Helmet>
+				<ScrollToTop />
 				<Header />
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/servizi" element={<Servizi />} />
-					<Route path="/prodotti" element={<Prodotti />} />
-					<Route path="*" element={<Navigate to="/" />} />
+					{routes.map((route, index) => {
+						const key = Object.keys(route)[0]
+						return <Route key={index} path={route[key].path} element={route[key].component} />
+					})}
 				</Routes>
 			</div>
 		</Router>

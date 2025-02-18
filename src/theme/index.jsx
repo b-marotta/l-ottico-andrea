@@ -4,13 +4,22 @@ import {
 	defineConfig,
 	defineRecipe,
 	defineTextStyles,
+	mergeConfigs,
 } from '@chakra-ui/react'
 import buttonRecipe from './base/button'
+import imageRecipe from './base/image'
 
 const customConfig = defineConfig({
 	theme: {
 		recipes: {
 			button: defineRecipe(buttonRecipe),
+			image: defineRecipe(imageRecipe),
+		},
+		keyframes: {
+			slides: {
+				from: { transform: 'translateX(0%)' },
+				to: { transform: 'translateX(-100%)' },
+			},
 		},
 		tokens: {
 			colors: {
@@ -22,9 +31,13 @@ const customConfig = defineConfig({
 					DEFAULT: { value: '#3e9308' },
 					light: { value: '#48a70c' },
 				},
+				tertiary: {
+					DEFAULT: { value: '#765b39' },
+					light: { value: '#8c6d47' },
+				},
 			},
 			fonts: {
-				body: { value: 'Roboto, sans-serif' },
+				body: { value: 'Montserrat, sans-serif' },
 			},
 		},
 		textStyles: defineTextStyles({
@@ -49,4 +62,6 @@ const customConfig = defineConfig({
 	},
 })
 
-export const system = createSystem(defaultConfig, customConfig)
+const config = mergeConfigs(defaultConfig, customConfig)
+
+export const system = createSystem(config)

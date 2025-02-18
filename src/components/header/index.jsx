@@ -1,14 +1,24 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
-import { Button, Image, HStack, Text, Box, Link } from '@chakra-ui/react'
-import { SITE_NAME } from '../../utils/global.variables'
+import { Button, Image, Text, Box, Link, useSlotRecipe } from '@chakra-ui/react'
+import { CALENDAR_LINK, SITE_NAME } from '../../utils/global.variables'
 import logo from '../../assets/logos/logo.png'
 import logo_white from '../../assets/logos/logo_white.png'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
+import header from '../../theme/components/header'
 import routes from '../../utils/routes'
-import { useLocation } from 'react-router-dom'
 
 const Header = () => {
 	const location = useLocation()
-	const [isOnTop, setIsOnTop] = useState()
+	const isHome = location.pathname === '/' ? true : false
+
+	const [isOnTop, setIsOnTop] = useState(null)
+
+	const variant = isHome ? (isOnTop ? 'onTop' : 'home') : 'default'
+
+	const recipe = useSlotRecipe({ recipe: header })
+	const styles = recipe({ variant })
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -28,62 +38,50 @@ const Header = () => {
 	}, [])
 
 	return (
-		<HStack
-			justifyContent={'space-between'}
-			py={4}
-			px={8}
-			position={'fixed'}
-			w={'100%'}
-			bg={'transparent'}
-			zIndex={100}
-			background={isOnTop ? 'transparent' : 'white'}
-			transition={'background 0.3s'}
-		>
-			<HStack gap={4} w={'25%'}>
-				<Image src={isOnTop ? logo_white : logo} alt="Prova" w={12} />
-				<Text textStyle={'2xl'} fontWeight={'500'} color={isOnTop ? 'white' : 'primary'}>
+		<Box {...styles.wrapper}>
+			<Box {...styles.logoWrapper}>
+				<Image src={isHome ? (isOnTop ? logo_white : logo) : logo} alt="Prova" w={12} />
+				<Text
+					textStyle={'2xl'}
+					fontWeight={'500'}
+					color={isHome ? (isOnTop ? 'white' : 'primary') : 'primary'}
+				>
 					{SITE_NAME}
 				</Text>
-			</HStack>
-			<HStack w={'50%'} justifyContent={'center'} gap={12}>
+			</Box>
+			<Box {...styles.navLinks}>
 				{routes.map((route, index) => {
+					route = route[Object.keys(route)[0]]
+					if (route.hidden) return
 					let isCurrent = location.pathname === route.path || location.pathname === route.path + '/'
 					return (
 						<Button
 							key={index}
-							className={isCurrent ? 'active' : ''}
-							color={
-								isOnTop ? (isCurrent ? 'white' : 'gray.400') : isCurrent ? 'primary' : 'gray.400'
-							}
-							_before={isOnTop ? { bg: 'white' } : {}}
-							_hover={{ color: isOnTop ? 'white' : 'primary' }}
-							as={Link}
+							as={RouterLink}
 							to={route.path}
-							textStyle={'lg'}
-							variant={'header'}
+							className={isCurrent ? 'current' : ''}
 							{...(isCurrent ? { 'aria-current': 'page' } : {})}
+							variant={'header'}
+							css={styles.navButton}
 						>
 							{route.title}
 						</Button>
 					)
 				})}
-			</HStack>
-			<Box w={'25%'} textAlign={'right'}>
-				<Link href={'http://calendar.app.google/WGGZBBdqh3QfQBZv5'} target="_blank" asChild>
-					<Button
-						as={Link}
-						to={'http://calendar.app.google/WGGZBBdqh3QfQBZv5'}
-						textStyle={'md'}
-						size={'sm'}
-						variant={isOnTop ? 'outline' : 'solid'}
-						color={'white'}
-						_hover={isOnTop ? { color: 'primary' } : { color: 'white' }}
-					>
-						PRENOTA ORA
-					</Button>
-				</Link>
 			</Box>
-		</HStack>
+			<Box {...styles.ctaWrapper}>
+				<Button
+					as={Link}
+					href={CALENDAR_LINK}
+					target="_blank"
+					{...styles.ctaButton}
+					variant={isHome ? (isOnTop ? 'outline_w' : 'solid') : 'solid'}
+					textDecoration={'none'}
+				>
+					PRENOTA ORA
+				</Button>
+			</Box>
+		</Box>
 	)
 }
 

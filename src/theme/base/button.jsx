@@ -5,6 +5,11 @@ export default {
 		height: 'auto',
 		px: '7',
 		py: '3',
+		fontWeight: '500',
+
+		_focus: {
+			outlineColor: 'transparent',
+		},
 	},
 	variants: {
 		size: {
@@ -23,15 +28,36 @@ export default {
 				color: 'white',
 				fontWeight: '700',
 				textStyle: 'sm',
-				_hover: {
-					bg: 'primary.light',
-				},
 				px: '7',
 				py: '3',
+
+				_hover: {
+					bg: 'primary',
+					opacity: 0.8,
+					color: 'white',
+				},
 			},
 			outline: {
 				px: '7',
 				py: '3',
+				borderColor: 'primary',
+				color: 'primary',
+
+				_hover: {
+					bg: 'primary',
+					color: 'white',
+				},
+			},
+			outline_w: {
+				px: '7',
+				py: '3',
+				borderColor: 'white',
+				color: 'white',
+
+				_hover: {
+					bg: 'white',
+					color: 'primary',
+				},
 			},
 			header: {
 				bg: 'transparent',
