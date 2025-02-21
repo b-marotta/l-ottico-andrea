@@ -23,6 +23,10 @@ export default {
 			},
 		},
 		variant: {
+			icon: {
+				bg: 'transparent',
+				px: 3,
+			},
 			solid: {
 				bg: 'primary',
 				color: 'white',

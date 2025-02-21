@@ -5,8 +5,8 @@ export default {
 			flexDirection: 'row',
 			alignItems: 'center',
 			justifyContent: 'space-between',
-			py: 4,
-			px: 8,
+			px: { base: 4, lg: 8 },
+			py: { base: 2, lg: 4 },
 			w: '100%',
 			transition: 'background 0.3s',
 			zIndex: 100,
@@ -20,14 +20,12 @@ export default {
 			flexDirection: 'row',
 			alignItems: 'center',
 			gap: 4,
-			w: '25%',
 		},
 		navLinks: {
-			display: 'flex',
+			display: { base: 'none', lg: 'flex' },
 			flexDirection: 'row',
 			justifyContent: 'center',
-			gap: 12,
-			w: '50%',
+			gap: '3vw',
 		},
 		navButton: {
 			textStyle: 'lg',
@@ -50,8 +48,11 @@ export default {
 			},
 		},
 		ctaWrapper: {
-			w: '25%',
 			textAlign: 'right',
+			display: { base: 'none', lg: 'flex' },
+		},
+		hamburgerWrapper: {
+			display: { base: 'flex', lg: 'none' },
 		},
 		ctaButton: {
 			textStyle: 'md',
@@ -129,5 +130,13 @@ export default {
 			},
 		},
 	},
-	slots: ['wrapper', 'navButton', 'ctaButton', 'navLinks', 'ctaWrapper', 'logoWrapper'],
+	slots: [
+		'wrapper',
+		'navButton',
+		'ctaButton',
+		'navLinks',
+		'hamburgerWrapper',
+		'ctaWrapper',
+		'logoWrapper',
+	],
 }

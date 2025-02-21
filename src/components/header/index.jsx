@@ -1,13 +1,14 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Button, Image, Text, Box, Link, useSlotRecipe } from '@chakra-ui/react'
+import { Button, Image, Text, Box, Link, Icon, useSlotRecipe } from '@chakra-ui/react'
 import { CALENDAR_LINK, SITE_NAME } from '../../utils/global.variables'
 import logo from '../../assets/logos/logo.png'
 import logo_white from '../../assets/logos/logo_white.png'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import header from '../../theme/components/header'
 import routes from '../../utils/routes'
+import { RxHamburgerMenu } from 'react-icons/rx'
 
 const Header = () => {
 	const location = useLocation()
@@ -42,7 +43,7 @@ const Header = () => {
 			<Box {...styles.logoWrapper}>
 				<Image src={isHome ? (isOnTop ? logo_white : logo) : logo} alt="Prova" w={12} />
 				<Text
-					textStyle={'2xl'}
+					textStyle={{ base: 'xl', lg: '2xl' }}
 					fontWeight={'500'}
 					color={isHome ? (isOnTop ? 'white' : 'primary') : 'primary'}
 				>
@@ -81,6 +82,11 @@ const Header = () => {
 					PRENOTA ORA
 				</Button>
 			</Box>
+			<Button {...styles.hamburgerWrapper} variant="icon">
+				<Icon color={isHome ? (isOnTop ? 'white' : 'black') : 'black'}>
+					<RxHamburgerMenu />
+				</Icon>
+			</Button>
 		</Box>
 	)
 }

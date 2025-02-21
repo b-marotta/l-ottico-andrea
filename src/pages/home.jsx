@@ -20,11 +20,11 @@ const Home = () => {
 			<Box position={'relative'}>
 				<Image src={image_src} alt="Prova" {...styles.image} />
 				<Box {...styles.overlayText}>
-					<Text textStyle={'6xl'} color={'white'}>
+					<Text textStyle={{ base: '2xl', md: '4xl', lg: '6xl' }} color={'white'}>
 						{labels.home.main.title}
 					</Text>
 					<Text
-						textStyle={'3xl'}
+						textStyle={{ base: 'xl', md: '2xl', lg: '3xl' }}
 						color={'gray.300'}
 						dangerouslySetInnerHTML={{ __html: labels.home.main.subtitle }}
 					/>

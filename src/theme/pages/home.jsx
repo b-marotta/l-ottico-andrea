@@ -4,6 +4,7 @@ export default {
 			width: '100%',
 			filter: 'brightness(0.5) sepia(0.2)',
 			maxHeight: '90vh',
+			h: '90vh',
 		},
 		overlayText: {
 			fontWeight: '500',
@@ -12,12 +13,13 @@ export default {
 			left: '50%',
 			transform: 'translate(-50%, -50%)',
 			textTransform: 'uppercase',
+			width: 'max-content',
 		},
 		section: {
 			paddingY: 12,
 		},
 		sectionShortWho: {
-			paddingY: 12,
+			paddingY: 20,
 			paddingX: { sm: 6, lg: 24 },
 			backgroundPosition: '50% 50%',
 			background: 'rgb(107, 107, 107)',
@@ -31,7 +33,7 @@ export default {
 		},
 		mapSection: {
 			display: 'flex',
-			flexDirection: 'row',
+			flexDirection: { base: 'column', lg: 'row' },
 			bg: '#fff3df',
 			alignItems: 'center',
 		},

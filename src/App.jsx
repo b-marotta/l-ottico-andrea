@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import { SITE_DESCRIPTION, SITE_NAME } from './utils/global.variables'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import routes from './utils/routes'
-import ScrollToTop from './components/scroll-to-top'
+import BottomRightOverlay from './components/bottom-right-overlay'
 
 const App = () => {
 	return (
@@ -22,7 +22,7 @@ const App = () => {
 						rel="stylesheet"
 					/>
 				</Helmet>
-				<ScrollToTop />
+				<BottomRightOverlay />
 				<Header />
 				<Routes>
 					{routes.map((route, index) => {
