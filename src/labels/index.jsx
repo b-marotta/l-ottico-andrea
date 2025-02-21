@@ -16,6 +16,7 @@ export default {
 			title: 'Vieni a trovarci!',
 		},
 		brands: 'I nostri marchi',
+		products: 'I nostri prodotti',
 	},
 	chi_siamo: {
 		andrea: {
