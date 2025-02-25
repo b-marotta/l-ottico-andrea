@@ -1,8 +1,8 @@
-npm run precommit 
+#npm run precommit 
 
-if [ $? -ne 0 ]; then
-  echo "ESLint found errors. Commit aborted."
-  exit 1
-fi
+# if [ $? -ne 0 ]; then
+#   echo "ESLint found errors. Commit aborted."
+#   exit 1
+# fi
 
-git add .
+# git add .

@@ -35,6 +35,9 @@ const customConfig = defineConfig({
 					DEFAULT: { value: '#765b39' },
 					light: { value: '#8c6d47' },
 				},
+				link: {
+					DEFAULT: '#1877F2',
+				},
 			},
 			fonts: {
 				body: { value: 'Montserrat, sans-serif' },

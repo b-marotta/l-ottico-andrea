@@ -72,6 +72,7 @@ export default {
 			flexDirection: 'column',
 			alignItems: 'center',
 			gap: 16,
+			overflowX: 'hidden',
 		},
 		mapInfoWrapper: {
 			w: '45vw',

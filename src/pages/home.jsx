@@ -9,16 +9,13 @@ import { Link } from 'react-router-dom'
 import routes from '../utils/routes'
 import { Icon } from '../theme/components/icons'
 import { LiaIdCardSolid } from 'react-icons/lia'
-import { FaFacebook, FaFacebookF, FaInstagram } from 'react-icons/fa'
-import { GoDotFill } from 'react-icons/go'
-import { LuDot } from 'react-icons/lu'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const Home = () => {
 	const recipe = useSlotRecipe({ recipe: home })
 	const styles = recipe()
 	const chiSiamoPath = routes.find((item) => item.chiSiamo).chiSiamo.path
 	const servicesPath = routes.find((item) => item.servizi).servizi.path
-	const productsPath = routes.find((item) => item.prodotti).prodotti.path
 
 	return (
 		<Box>
@@ -167,6 +164,8 @@ const Home = () => {
 								fontWeight={'500'}
 								borderBottom={'1px solid black'}
 								lineHeight={1}
+								transition={'all 0.2s'}
+								_hover={{ color: '#1877F2', borderColor: '#1877F2' }}
 							>
 								02 39005279
 							</Text>
@@ -185,7 +184,7 @@ const Home = () => {
 								<ChakraIcon
 									marginInline="auto"
 									fontSize="xl"
-									transition={'all 0.2s'}
+									transition={'color 0.2s'}
 									_hover={{ color: '#1877F2' }}
 								>
 									<FaFacebookF />
@@ -199,7 +198,7 @@ const Home = () => {
 								<ChakraIcon
 									marginInline="auto"
 									fontSize="xl"
-									transition={'all 0.2s'}
+									transition={'color 0.2s'}
 									_hover={{ color: '#1877F2' }}
 								>
 									<FaInstagram />
