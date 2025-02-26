@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
 	return (
 		<Link
 			aria-label="Chat on WhatsApp"
-			href="https://wa.me/39"
+			href="https://wa.me/393454652124"
 			target="_blank"
 			opacity={0.6}
 			_hover={{ opacity: 1 }}
