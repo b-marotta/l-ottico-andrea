@@ -57,8 +57,11 @@ export default {
 			backgroundSize: 'cover',
 		},
 		sectionContent: {
-			width: { sm: '100%', lg: '65%' },
+			width: { sm: '100%', lg: '75%' },
 			margin: 'auto',
+			display: 'flex',
+			flexDirection: 'column',
+			gap: 12,
 		},
 		mapSection: {
 			display: 'flex',
@@ -102,7 +105,6 @@ export default {
 		buttonContainer: {
 			width: 'fit-content',
 			margin: 'auto',
-			marginTop: 12,
 		},
 		sectionTitle: {
 			textStyle: '3xl',
@@ -114,6 +116,78 @@ export default {
 		threeStyleSection: {
 			display: 'grid',
 			gridTemplateColumns: '1fr 1fr 1fr',
+		},
+		titleServices: {
+			textStyle: 'xl',
+			fontWeight: '600',
+			position: 'absolute',
+			top: '50%',
+			transform: 'translate(-50%, -50%)',
+			color: 'white',
+			left: '50%',
+			textAlign: 'center',
+			w: '70%',
+		},
+		innerTextServices: {
+			textStyle: 'lg',
+			fontWeight: '500',
+			position: 'absolute',
+			top: '50%',
+			transform: 'translate(-50%, -50%)',
+			color: 'white',
+			left: '50%',
+			textAlign: 'center',
+			w: '70%',
+		},
+		imageServices: {
+			aspectRatio: '1/1',
+			w: '100%',
+			filter: 'sepia(0.2) brightness(0.5)',
+		},
+		front: {
+			position: 'absolute',
+			backfaceVisibility: 'hidden',
+			w: '100%',
+			h: '100%',
+		},
+		back: {
+			position: 'absolute',
+			backfaceVisibility: 'hidden',
+			w: '100%',
+			h: '100%',
+			transform: 'rotateY(180deg)',
+			bg: 'primary',
+		},
+		back2: {
+			position: 'absolute',
+			backfaceVisibility: 'hidden',
+			w: '100%',
+			h: '100%',
+			transform: 'rotateX(180deg)',
+			bg: 'primary',
+		},
+		servicesBox: {
+			position: 'relative',
+			transformStyle: 'preserve-3d',
+			transition: 'all 0.8s',
+			w: '100%',
+			h: '100%',
+		},
+		servicesBoxWrapper: {
+			aspectRatio: '1/1',
+			_hover: {
+				'& .servicesBox': {
+					transform: 'rotateY(180deg)',
+				},
+			},
+		},
+		servicesBoxWrapper2: {
+			aspectRatio: '1/1',
+			_hover: {
+				'& .servicesBox': {
+					transform: 'rotateX(180deg)',
+				},
+			},
 		},
 	},
 	slots: [
@@ -136,5 +210,15 @@ export default {
 		'threeStyleSection',
 		'miniSectionLogos',
 		'miniSectionLogosWrapper',
+		'boxSticky',
+		'titleServices',
+		'innerTextServices',
+		'imageServices',
+		'front',
+		'back',
+		'servicesBox',
+		'servicesBoxWrapper',
+		'back2',
+		'servicesBoxWrapper2',
 	],
 }

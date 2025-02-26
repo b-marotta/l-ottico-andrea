@@ -1,7 +1,20 @@
-import { Box, Image, Text, Button, useSlotRecipe, Icon as ChakraIcon, Flex } from '@chakra-ui/react'
+import {
+	Box,
+	Image,
+	Text,
+	Button,
+	useSlotRecipe,
+	Icon as ChakraIcon,
+	Flex,
+	Grid,
+} from '@chakra-ui/react'
 import React from 'react'
 import image_src from '../assets/photos/01.jpg'
 import image_src_2 from '../assets/photos/3.jpg'
+import image_src_snellen from '../assets/other/snellen.jpg'
+import image_src_lens from '../assets/other/lens.jpg'
+import image_src_analisi from '../assets/other/analisi.jpg'
+import image_src_bg_line from '../assets/other/bg_line.png'
 import BrandsCarousel from '../components/brands-carousel'
 import home from '../theme/pages/home'
 import labels from '../labels'
@@ -16,6 +29,7 @@ const Home = () => {
 	const styles = recipe()
 	const chiSiamoPath = routes.find((item) => item.chiSiamo).chiSiamo.path
 	const servicesPath = routes.find((item) => item.servizi).servizi.path
+	const productsPath = routes.find((item) => item.prodotti).prodotti.path
 
 	return (
 		<Box>
@@ -32,23 +46,19 @@ const Home = () => {
 					/>
 				</Box>
 			</Box>
-			<Box {...styles.section}>
-				<Box {...styles.sectionContent}>
-					<Text {...styles.sectionTitle}>{labels.home.services}</Text>
-					<Box h={'400px'}></Box>
-					<Box {...styles.buttonContainer}>
-						<Button
-							variant={'outline'}
-							as={Link}
-							to={servicesPath}
-							dangerouslySetInnerHTML={{ __html: labels.home.buttons.discoverMore }}
-						/>
-					</Box>
-				</Box>
+			<Box {...styles.brandsSection}>
+				<Text {...styles.sectionTitle} dangerouslySetInnerHTML={{ __html: labels.home.brands }} />
+				<BrandsCarousel />
+				<Button
+					variant={'outline'}
+					as={Link}
+					to={productsPath}
+					dangerouslySetInnerHTML={{ __html: labels.home.buttons.discoverMore }}
+				/>
 			</Box>
 			<Box {...styles.sectionShortWho} bgImage={`url(${image_src_2})`}>
 				<Box {...styles.sectionContent}>
-					<Text {...styles.textCenter} textStyle={'4xl'} fontWeight={'500'} mb={10}>
+					<Text {...styles.textCenter} textStyle={'4xl'} fontWeight={'500'}>
 						Chi siamo
 					</Text>
 					<Text
@@ -65,10 +75,50 @@ const Home = () => {
 					</Box>
 				</Box>
 			</Box>
-			<Box {...styles.section}>
+			<Box {...styles.section} bgImage={`url(${image_src_bg_line})`} backgroundSize="contain">
 				<Box {...styles.sectionContent}>
-					<Text {...styles.sectionTitle}>I nostri prodotti</Text>
-					<Box h={'400px'}></Box>
+					<Text {...styles.sectionTitle}>{labels.home.services}</Text>
+					<Grid gap={8} gridTemplateColumns={'1fr 1fr 1fr'} my={4}>
+						<Box {...styles.servicesBoxWrapper}>
+							<Box {...styles.servicesBox} className="servicesBox">
+								<Box {...styles.front}>
+									<Image src={image_src_snellen} {...styles.imageServices} />
+									<Text {...styles.titleServices}>Analisi visive optometriche</Text>
+								</Box>
+								<Box {...styles.back}>
+									<Text {...styles.innerTextServices}>
+										Grazie alle tecniche di refrazione soggettiva, siamo in grado di determinare con
+										precisione il valore diottrico necessario per te.
+									</Text>
+								</Box>
+							</Box>
+						</Box>
+						<Box {...styles.servicesBoxWrapper2}>
+							<Box {...styles.servicesBox} className="servicesBox">
+								<Box {...styles.front}>
+									<Image src={image_src_lens} {...styles.imageServices} />
+									<Text {...styles.titleServices}>Lenti a contatto</Text>
+								</Box>
+								<Box {...styles.back2}>
+									<Text {...styles.innerTextServices}>
+										Offriamo applicazione di lenti a contatto morbide, rigide gas permeabili e su
+										misura per cornee irregolari, con esame optometrico incluso.
+									</Text>
+								</Box>
+							</Box>
+						</Box>
+						<Box {...styles.servicesBoxWrapper}>
+							<Box {...styles.servicesBox} className="servicesBox">
+								<Box {...styles.front}>
+									<Image src={image_src_analisi} {...styles.imageServices} />
+									<Text {...styles.titleServices}>Misurazioni strumentali</Text>
+								</Box>
+								<Box {...styles.back}>
+									<Text {...styles.innerTextServices}>{labels.home.text.services}</Text>
+								</Box>
+							</Box>
+						</Box>
+					</Grid>
 					<Box {...styles.buttonContainer}>
 						<Button
 							variant={'outline'}
@@ -104,22 +154,11 @@ const Home = () => {
 					width="100%"
 					height="500"
 					style={{ border: 0 }}
-					allowfullscreen=""
 					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</Box>
-			<Box {...styles.brandsSection}>
-				<Text {...styles.sectionTitle} dangerouslySetInnerHTML={{ __html: labels.home.brands }} />
-				<BrandsCarousel />
-				{/* <Button
-					variant={'outline'}
-					as={Link}
-					to={productsPath}
-					dangerouslySetInnerHTML={{ __html: labels.home.buttons.discoverMore }}
-				/> */}
-			</Box>
-			<Box {...styles.threeStyleSection} bg={'gray.100'}>
+			<Box {...styles.threeStyleSection} bg={' #fefee9'}>
 				<Box {...styles.miniSection}>
 					<ChakraIcon marginInline="auto" fontSize="4xl" color="primary">
 						<LiaIdCardSolid />

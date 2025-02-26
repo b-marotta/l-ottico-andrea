@@ -15,8 +15,11 @@ export default {
 		mapSection: {
 			title: 'Vieni a trovarci!',
 		},
-		brands: 'I nostri marchi',
-		products: 'I nostri prodotti',
+		brands: 'I nostri prodotti',
+		text: {
+			services:
+				"Offriamo diverse misurazioni strumentali: topografia e pachimetria corneale, analisi dell'opacità del cristallino, tonometria a soffio e indagine lacrimale per una valutazione completa della salute oculare.",
+		},
 	},
 	chi_siamo: {
 		andrea: {

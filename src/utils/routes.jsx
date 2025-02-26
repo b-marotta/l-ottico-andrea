@@ -4,6 +4,7 @@ import Servizi from '../pages/servizi'
 import ChiSiamo from '../pages/chi-siamo'
 import Home from '../pages/home'
 import { Navigate } from 'react-router-dom'
+import PrivacyPolicy from '../pages/privacy-policy'
 
 export default [
 	{
@@ -32,6 +33,13 @@ export default [
 			path: '/prodotti',
 			component: <Prodotti />,
 			title: 'Prodotti',
+		},
+	},
+	{
+		privacyPolicy: {
+			path: '*', // 404
+			component: <PrivacyPolicy to={'/'} />,
+			hidden: true,
 		},
 	},
 	{

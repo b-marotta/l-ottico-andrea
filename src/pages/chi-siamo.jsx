@@ -1,14 +1,24 @@
-import { Box, Heading, Image, Separator, Text } from '@chakra-ui/react'
+import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import image_src from '../assets/photos/03.jpg'
-import andrea_image_src from '../assets/photos/andrea_no_bg.png'
-import thomas_image_src from '../assets/photos/thomas_no_bg.png'
+import andrea_image_src from '../assets/photos/andrea.png'
+import thomas_image_src_no_bg from '../assets/photos/thomas_no_bg.png'
+import andrea_image_src_no_bg from '../assets/photos/andrea_no_bg.png'
+import thomas_image_src from '../assets/photos/thomas.png'
 import styles from '../theme/pages/chi-siamo'
 import labels from '../labels'
 
-const MemberSection = ({ isRight, labels, image }) => {
+const MemberSection = ({ isRight, labels, image, no_bg, alt }) => {
 	return (
-		<Box {...(isRight ? styles.sectionTextRight : styles.section)}>
+		<Box
+			{...(isRight ? { flexDirection: 'row-reverse' } : null)}
+			{...styles.section}
+			h={'max(calc(100dvh - var(--header-height)), 550px)'}
+			position={'sticky'}
+			top={'var(--header-height)'}
+			bg={'white'}
+			borderTop={'1px solid #E5E5E5'}
+		>
 			<Box width={'45vw'} paddingRight={'5vw'}>
 				<Box {...styles.heading}>
 					<Heading
@@ -24,12 +34,21 @@ const MemberSection = ({ isRight, labels, image }) => {
 				/>
 			</Box>
 			<Box {...styles.imageContainer}>
-				<Box {...styles.imageBackgroundPrimary}></Box>
+				<Box {...styles.imageBackgroundPrimary} />
 				<Image
 					src={image}
-					alt="Thomas"
-					{...(!isRight ? styles.imageFilter1 : styles.imageFilter2)}
+					alt={alt}
+					{...styles.imageFilter}
 					{...styles.imageStyle}
+					borderRadius={80}
+				/>
+				<Image
+					src={no_bg}
+					alt={alt}
+					{...styles.imageStyle}
+					position={'absolute'}
+					top={0}
+					borderRadius={80}
 				/>
 			</Box>
 		</Box>
@@ -46,9 +65,21 @@ const ChiSiamo = () => {
 					</Text>
 				</Box>
 			</Box>
-			<MemberSection labels={labels.chi_siamo.andrea} image={andrea_image_src} />
-			<Separator />
-			<MemberSection isRight labels={labels.chi_siamo.thomas} image={thomas_image_src} />
+			<Box>
+				<MemberSection
+					labels={labels.chi_siamo.andrea}
+					image={andrea_image_src}
+					no_bg={andrea_image_src_no_bg}
+					alt={'Andrea'}
+				/>
+				<MemberSection
+					isRight
+					labels={labels.chi_siamo.thomas}
+					image={thomas_image_src}
+					no_bg={thomas_image_src_no_bg}
+					alt={'Thomas'}
+				/>
+			</Box>
 		</Box>
 	)
 }

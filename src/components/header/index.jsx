@@ -14,6 +14,8 @@ const Header = () => {
 	const location = useLocation()
 	const isHome = location.pathname === '/' ? true : false
 
+	const headerRef = React.createRef()
+
 	const [isOnTop, setIsOnTop] = useState(null)
 
 	const variant = isHome ? (isOnTop ? 'onTop' : 'home') : 'default'
@@ -22,6 +24,9 @@ const Header = () => {
 	const styles = recipe({ variant })
 
 	useEffect(() => {
+		var r = document.querySelector(':root')
+		r.style.setProperty('--header-height', headerRef.current.clientHeight + 'px')
+
 		const handleScroll = () => {
 			if (window.scrollY > 0) {
 				setIsOnTop(false)
@@ -39,7 +44,7 @@ const Header = () => {
 	}, [])
 
 	return (
-		<Box {...styles.wrapper}>
+		<Box {...styles.wrapper} ref={headerRef}>
 			<Box {...styles.logoWrapper}>
 				<Image src={isHome ? (isOnTop ? logo_white : logo) : logo} alt="Prova" w={12} />
 				<Text

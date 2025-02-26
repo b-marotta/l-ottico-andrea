@@ -5,7 +5,7 @@ const chiSiamoStyles = {
 		backgroundAttachment: 'fixed',
 		backgroundColor: 'rgb(107, 107, 107)',
 		backgroundBlendMode: 'multiply',
-		backgroundPosition: '30% 65%',
+		backgroundPosition: '30% 100%',
 		backgroundSize: 'cover',
 	},
 	overlayText: {
@@ -22,15 +22,6 @@ const chiSiamoStyles = {
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	sectionTextRight: {
-		paddingX: 24,
-		paddingY: 24,
-		display: 'flex',
-		gap: 24,
-		justifyContent: 'center',
-		alignItems: 'center',
-		flexDirection: 'row-reverse',
-	},
 	imageContainer: {
 		position: 'relative',
 	},
@@ -39,10 +30,10 @@ const chiSiamoStyles = {
 		zIndex: -1,
 		width: '300px',
 		height: '300px',
-		background: '#e6ecfd',
-		borderRadius: '300px',
-		left: '50%',
-		top: '50%',
+		background: 'primary',
+		borderRadius: 80,
+		left: '40%',
+		top: '40%',
 		transform: 'translate(-50%, -50%)',
 	},
 	heading: {
@@ -63,13 +54,10 @@ const chiSiamoStyles = {
 	imageStyle: {
 		width: '320px',
 		height: '320px',
-		borderRadius: '80px',
+		borderRadius: '8000px',
 	},
-	imageFilter1: {
-		filter: 'brightness(1.2)',
-	},
-	imageFilter2: {
-		filter: 'sepia(0.3)',
+	imageFilter: {
+		filter: 'grayscale(1)',
 	},
 }
 
