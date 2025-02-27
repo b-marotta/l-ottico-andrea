@@ -23,7 +23,7 @@ export default {
 	},
 	chi_siamo: {
 		andrea: {
-			title: 'Andrea Giannettori',
+			title: 'Andrea Gianettoni',
 			subtitle: 'Il vostro amichevole ottico di quartiere',
 			description:
 				'Andrea Gianettoni è un ottico optometrista con una forte dedizione per il suo lavoro. Dopo aver maturato esperienza in diverse realtà del settore, nel 2005 ha deciso di aprire il proprio negozio, L&apos;Ottico Andrea. <br /> <br /> La sua attenzione è sempre rivolta alla ricerca delle migliori soluzioni per i clienti, con un focus particolare sulla qualità delle lenti e delle montature. Infatti nel 2024 ha ricevuto il prestigioso &quot;Salvino d&apos;argento&quot;, un riconoscimento per i suoi 35 anni di attività professionale. La sua attenzione è sempre rivolta alla ricerca delle migliori soluzioni per i clienti, con un focus particolare sulla qualità delle lenti e delle montature. <br /> <br /> Nel 2018 il suo impegno è stato premiato con la nomina a centro ottico <b>&quot;Zeiss Specialist&quot;</b>, un riconoscimento che certifica la qualità e l&apos;innovazione del suo lavoro.',

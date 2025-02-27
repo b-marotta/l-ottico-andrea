@@ -7,8 +7,8 @@ const PrivacyPolicy = () => {
 		<Stack textAlign={'left'} p={8} gap={4}>
 			<Text>Informativa sulla Privacy di L'Ottico Andrea SRL</Text>
 			<Text>
-				1. Informazioni di Contatto Nome Legale: L'Ottico Andrea di GIANNETTONI ANDREA Indirizzo:
-				Via Maria Melato, 8/10, 20157 Milano Email: otticoandre@gmail.com Telefono: 0239005279
+				1. Informazioni di Contatto Nome Legale: L'Ottico Andrea di GIANETTONI ANDREA Indirizzo: Via
+				Maria Melato, 8/10, 20157 Milano Email: otticoandre@gmail.com Telefono: 0239005279
 			</Text>
 			<Text>
 				2. Dati Raccolti Attualmente, non raccogliamo dati personali attraverso il nostro sito web.

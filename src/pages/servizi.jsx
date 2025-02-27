@@ -1,13 +1,19 @@
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 import React from 'react'
-import image_src from '../assets/images/prodotti.webp'
+import image_src from '../assets/photos/04.jpg'
+import styles from '../theme/pages/servizi'
 
 const Servizi = () => {
 	return (
 		<Box>
-			<Box position={'relative'}>
-				<Image src={image_src} alt="Prova" w={'100%'} h={'400px'} filter={'brightness(0.5)'} />
+			<Box position={'relative'} bgImage={`url(${image_src})`} {...styles.main_image}>
+				<Box {...styles.overlayText}>
+					<Text textStyle={'6xl'} fontWeight={600} color={'white'}>
+						I NOSTRI SERVIZI
+					</Text>
+				</Box>
 			</Box>
+			<Box></Box>
 		</Box>
 	)
 }

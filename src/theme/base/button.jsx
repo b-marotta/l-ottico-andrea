@@ -6,10 +6,6 @@ export default {
 		px: '7',
 		py: '3',
 		fontWeight: '500',
-
-		_focus: {
-			outlineColor: 'transparent',
-		},
 	},
 	variants: {
 		size: {
