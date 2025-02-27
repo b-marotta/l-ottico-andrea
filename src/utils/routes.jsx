@@ -9,7 +9,7 @@ import PrivacyPolicy from '../pages/privacy-policy'
 export default [
 	{
 		home: {
-			path: '',
+			path: '/',
 			component: <Home />,
 			title: 'Home',
 		},

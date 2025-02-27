@@ -158,7 +158,7 @@ const Home = () => {
 					referrerPolicy="no-referrer-when-downgrade"
 				></iframe>
 			</Box>
-			<Box {...styles.threeStyleSection} bg={' #fefee9'}>
+			<Box {...styles.threeStyleSection}>
 				<Box {...styles.miniSection}>
 					<ChakraIcon marginInline="auto" fontSize="4xl" color="primary">
 						<LiaIdCardSolid />
@@ -171,6 +171,7 @@ const Home = () => {
 						direttamente in negozio, veloci e conformi alle normative. Passa a trovarci!
 					</Text>
 				</Box>
+				<Box m={'auto'} h={'120px'} w={'1px'} bg={'gray.200'} />
 				<Box {...styles.miniSection}>
 					<Icon
 						name="Alma"
@@ -185,6 +186,7 @@ const Home = () => {
 						funziona!
 					</Text>
 				</Box>
+				<Box m={'auto'} h={'120px'} w={'1px'} bg={'gray.200'} />
 				<Box {...styles.miniSectionLogosWrapper}>
 					<Flex flexDirection={'column'} alignItems={'center'} gap={2}>
 						<Text width="auto" textStyle={'lg'} fontWeight={'500'}>

@@ -44,6 +44,7 @@ export default {
 			filter: 'invert(40%) grayscale(1) brightness(90%) contrast(60%)',
 			height: '70px',
 			flex: '1 0 auto',
+			transition: 'all 0.1s',
 		},
 	},
 	slots: ['logos', 'logoItems', 'image'],

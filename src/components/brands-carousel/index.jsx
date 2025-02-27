@@ -3,7 +3,7 @@ import { Box, Image, useSlotRecipe } from '@chakra-ui/react'
 import { importBrandsImages } from '../../utils'
 import brandsCarousel from '../../theme/components/brands-carousel'
 
-const BrandImages = ({ styles }) => {
+export const BrandImages = ({ styles }) => {
 	const [images, setImages] = useState({})
 
 	useEffect(() => {
