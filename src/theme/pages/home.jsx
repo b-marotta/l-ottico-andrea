@@ -23,10 +23,11 @@ export default {
 			flexDirection: 'column',
 			gap: 4,
 			justifyContent: 'center',
-			py: 8,
+			py: 12,
 			px: 28,
 			m: 'auto',
 			textAlign: 'center',
+			flex: 1,
 		},
 		miniSectionLogos: {
 			flex: 1,
@@ -46,6 +47,7 @@ export default {
 			justifyContent: 'center',
 			py: 8,
 			px: 16,
+			flex: 1,
 		},
 		sectionShortWho: {
 			paddingY: 20,
@@ -114,8 +116,7 @@ export default {
 			textAlign: 'center',
 		},
 		threeStyleSection: {
-			display: 'grid',
-			gridTemplateColumns: '1fr 1fr 1fr',
+			display: 'flex',
 		},
 		titleServices: {
 			textStyle: 'xl',
