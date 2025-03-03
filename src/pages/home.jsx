@@ -34,7 +34,7 @@ const Home = () => {
 	return (
 		<Box>
 			<Box position={'relative'}>
-				<Image src={image_src} alt="Prova" {...styles.image} />
+				<Image src={image_src} alt="Immagine principale" {...styles.image} />
 				<Box {...styles.overlayText}>
 					<Text textStyle={{ base: '2xl', md: '4xl', lg: '6xl' }} color={'white'}>
 						{labels.home.main.title}
@@ -82,7 +82,11 @@ const Home = () => {
 						<Box {...styles.servicesBoxWrapper}>
 							<Box {...styles.servicesBox} className="servicesBox">
 								<Box {...styles.front}>
-									<Image src={image_src_snellen} {...styles.imageServices} />
+									<Image
+										alt="Analisi visive optometriche"
+										src={image_src_snellen}
+										{...styles.imageServices}
+									/>
 									<Text {...styles.titleServices}>Analisi visive optometriche</Text>
 								</Box>
 								<Box {...styles.back}>
@@ -96,7 +100,7 @@ const Home = () => {
 						<Box {...styles.servicesBoxWrapper2}>
 							<Box {...styles.servicesBox} className="servicesBox">
 								<Box {...styles.front}>
-									<Image src={image_src_lens} {...styles.imageServices} />
+									<Image alt="Lenti a contatto" src={image_src_lens} {...styles.imageServices} />
 									<Text {...styles.titleServices}>Lenti a contatto</Text>
 								</Box>
 								<Box {...styles.back2}>
@@ -110,7 +114,11 @@ const Home = () => {
 						<Box {...styles.servicesBoxWrapper}>
 							<Box {...styles.servicesBox} className="servicesBox">
 								<Box {...styles.front}>
-									<Image src={image_src_analisi} {...styles.imageServices} />
+									<Image
+										src={image_src_analisi}
+										{...styles.imageServices}
+										title="Misurazioni strumentali"
+									/>
 									<Text {...styles.titleServices}>Misurazioni strumentali</Text>
 								</Box>
 								<Box {...styles.back}>
@@ -155,7 +163,11 @@ const Home = () => {
 					height="500"
 					style={{ border: 0 }}
 					loading="lazy"
+					title="Mappa di Google Maps con la posizione"
 					referrerPolicy="no-referrer-when-downgrade"
+					data-cookiescript="accepted"
+					alt="Mappa di Google Maps con la posizione"
+					data-cookiecategory="functionality"
 				></iframe>
 			</Box>
 			<Box {...styles.threeStyleSection}>
@@ -221,6 +233,7 @@ const Home = () => {
 								to="https://www.facebook.com/profile.php?id=100009528034422"
 								target={'_blank'}
 								{...styles.miniSectionLogos}
+								aria-label="Seguci su Facebook"
 							>
 								<ChakraIcon
 									marginInline="auto"
@@ -235,6 +248,7 @@ const Home = () => {
 								to="https://www.instagram.com/lotticoandrea/"
 								target={'_blank'}
 								{...styles.miniSectionLogos}
+								aria-label="Seguci su Instagram"
 							>
 								<ChakraIcon
 									marginInline="auto"
