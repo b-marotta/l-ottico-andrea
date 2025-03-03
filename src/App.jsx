@@ -9,7 +9,6 @@ import BottomRightOverlay from './components/bottom-right-overlay'
 import Footer from './components/footer'
 import CookieBanner from './components/cookie-banner'
 import { Box } from '@chakra-ui/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const App = () => {
 	return (
@@ -25,7 +24,6 @@ const App = () => {
 						rel="stylesheet"
 					/>
 				</Helmet>
-				<SpeedInsights />
 				<CookieBanner />
 				<BottomRightOverlay />
 				<Header />
