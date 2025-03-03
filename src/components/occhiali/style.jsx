@@ -5,11 +5,11 @@ export default {
 		position: 'absolute',
 		zIndex: '-1',
 		display: 'flex',
-		transform: 'rotate(25deg)',
+		transform: 'rotate(15deg)',
 		alignItems: 'center',
 	},
 	images: {
-		width: '20%',
-		opacity: '0.2',
+		width: '30%',
+		opacity: '0.07',
 	},
 }

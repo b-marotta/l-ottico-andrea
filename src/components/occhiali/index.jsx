@@ -8,14 +8,14 @@ const Occhiali = () => {
 		<Box
 			{...styles.main}
 			style={{
-				animation: 'translate-eyewear 20s linear infinite',
+				animation: 'translate-eyewear 30s linear infinite',
 			}}
 		>
 			<style>
 				{`
 				@keyframes translate-eyewear {
-					from { transform: rotate(25deg) translate(0%, 0); }
-					from { transform: rotate(25deg) translate(-100%, 0); }
+					from { transform: rotate(15deg) translate(0%, 0); }
+					from { transform: rotate(15deg) translate(-100%, 0); }
 				}
 				`}
 			</style>
