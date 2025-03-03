@@ -1,14 +1,14 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import image_src from '../assets/photos/03.jpg'
-import andrea_image_src from '../assets/photos/andrea.png'
-import thomas_image_src_no_bg from '../assets/photos/thomas_no_bg.png'
-import andrea_image_src_no_bg from '../assets/photos/andrea_no_bg.png'
-import thomas_image_src from '../assets/photos/thomas.png'
+import andrea_image_src from '../assets/photos/andrea_no_bg.png'
+import thomas_image_src from '../assets/photos/thomas_no_bg.png'
+import blob from '../assets/shapes/blob.jpg'
+import blobMap from '../assets/shapes/blob_map.png'
 import styles from '../theme/pages/chi-siamo'
 import labels from '../labels'
 
-const MemberSection = ({ isRight, labels, image, no_bg, alt }) => {
+const MemberSection = ({ isRight, labels, image, alt }) => {
 	return (
 		<Box
 			{...(isRight ? { flexDirection: 'row-reverse' } : null)}
@@ -34,21 +34,24 @@ const MemberSection = ({ isRight, labels, image, no_bg, alt }) => {
 				/>
 			</Box>
 			<Box {...styles.imageContainer}>
-				<Box {...styles.imageBackgroundPrimary} />
 				<Image
-					src={image}
-					alt={alt}
-					{...styles.imageFilter}
-					{...styles.imageStyle}
-					borderRadius={80}
-				/>
-				<Image
-					src={no_bg}
+					src={blob}
 					alt={alt}
 					{...styles.imageStyle}
 					position={'absolute'}
-					top={0}
-					borderRadius={80}
+					zIndex={-1}
+					objectFit={'fill'}
+					{...(isRight
+						? { transform: 'rotateY(180deg)', filter: 'hue-rotate(107deg)' }
+						: { filter: 'hue-rotate(120deg)' })}
+				/>
+				<Image
+					src={image}
+					alt={'blob'}
+					{...styles.imageStyle}
+					{...styles.imageCut}
+					maskImage={`url(${blobMap})`}
+					{...(isRight ? { transform: 'rotateY(180deg)' } : null)}
 				/>
 			</Box>
 		</Box>
@@ -66,17 +69,11 @@ const ChiSiamo = () => {
 				</Box>
 			</Box>
 			<Box>
-				<MemberSection
-					labels={labels.chi_siamo.andrea}
-					image={andrea_image_src}
-					no_bg={andrea_image_src_no_bg}
-					alt={'Andrea'}
-				/>
+				<MemberSection labels={labels.chi_siamo.andrea} image={andrea_image_src} alt={'Andrea'} />
 				<MemberSection
 					isRight
 					labels={labels.chi_siamo.thomas}
 					image={thomas_image_src}
-					no_bg={thomas_image_src_no_bg}
 					alt={'Thomas'}
 				/>
 			</Box>

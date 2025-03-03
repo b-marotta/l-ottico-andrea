@@ -31,8 +31,7 @@ const chiSiamoStyles = {
 		width: '300px',
 		height: '300px',
 		background: 'primary',
-		borderRadius: 80,
-		left: '40%',
+		left: '60%',
 		top: '40%',
 		transform: 'translate(-50%, -50%)',
 	},
@@ -52,12 +51,13 @@ const chiSiamoStyles = {
 		color: 'primary',
 	},
 	imageStyle: {
-		width: '320px',
-		height: '320px',
-		borderRadius: '8000px',
+		width: '300px',
+		height: '300px',
 	},
-	imageFilter: {
-		filter: 'grayscale(1)',
+	imageCut: {
+		maskRepeat: 'no-repeat',
+		maskSize: '100% 100%',
+		maskPosition: 'right',
 	},
 }
 

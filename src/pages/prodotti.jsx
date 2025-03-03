@@ -8,6 +8,9 @@ import {
 	importLacImages,
 	importLentiImages,
 } from '../utils'
+import Lenti from '../components/lente-trasparente'
+import Occhiali from '../components/occhiali'
+import bg_lenses from '../assets/shapes/curve-glass-video.mp4'
 
 const LacImages = ({ styles }) => {
 	const [images, setImages] = useState({})
@@ -109,8 +112,9 @@ const Prodotti = () => {
 				</Box>
 			</Box>
 
-			<Box {...styles.section} textAlign={'center'}>
-				<Stack gap={4}>
+			<Box {...styles.section} textAlign={'left'} overflow={'hidden'}>
+				<Lenti />
+				<Stack gap={4} flex={'1 0 auto'}>
 					<Text textStyle={{ base: 'lg', md: 'xl', lg: '4xl' }} fontWeight={500}>
 						Lenti Oftalmiche
 					</Text>
@@ -122,7 +126,8 @@ const Prodotti = () => {
 					<LentiImages styles={styles} />
 				</Box>
 			</Box>
-			<Box {...styles.section} textAlign={'center'}>
+			<Box {...styles.section} textAlign={'center'} bgColor={'#f7fff8'}>
+				<Occhiali />
 				<Stack gap={4}>
 					<Text textStyle={{ base: 'lg', md: 'xl', lg: '4xl' }} fontWeight={500}>
 						Montature
@@ -133,6 +138,11 @@ const Prodotti = () => {
 				</Box>
 			</Box>
 			<Box {...styles.section} textAlign={'center'}>
+				<Box w={'100%'} h={'100%'} position={'absolute'} opacity={0.2}>
+					<video autoPlay muted loop width={'100%'} height={'100%'}>
+						<source src={bg_lenses} type="video/mp4" />
+					</video>
+				</Box>
 				<Stack gap={4}>
 					<Text textStyle={{ base: 'lg', md: 'xl', lg: '4xl' }} fontWeight={500}>
 						Lenti a contatto
