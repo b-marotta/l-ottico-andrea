@@ -43,7 +43,7 @@ const MemberSection = ({ isRight, labels, image, alt }) => {
 					objectFit={'fill'}
 					{...(isRight
 						? { transform: 'rotateY(180deg)', filter: 'hue-rotate(107deg)' }
-						: { filter: 'hue-rotate(120deg)' })}
+						: { filter: 'hue-rotate(107deg)' })}
 				/>
 				<Image
 					src={image}

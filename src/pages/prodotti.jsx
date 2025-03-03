@@ -126,7 +126,7 @@ const Prodotti = () => {
 					<LentiImages styles={styles} />
 				</Box>
 			</Box>
-			<Box {...styles.section} textAlign={'center'} bgColor={'#f7fff8'}>
+			<Box {...styles.section} textAlign={'center'} bgColor={'#fff7f7'}>
 				<Occhiali />
 				<Stack gap={4}>
 					<Text textStyle={{ base: 'lg', md: 'xl', lg: '4xl' }} fontWeight={500}>
