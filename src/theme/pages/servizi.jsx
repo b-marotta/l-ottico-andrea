@@ -4,7 +4,7 @@ export default {
 		height: '250px',
 		backgroundColor: 'rgb(107, 107, 107)',
 		backgroundBlendMode: 'multiply',
-		backgroundPosition: 'center',
+		backgroundPosition: '50% 35%',
 		backgroundSize: 'cover',
 		filter: 'sepia(0.3)',
 	},
