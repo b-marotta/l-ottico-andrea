@@ -9,11 +9,13 @@ import { Link as RouterLink, useLocation } from 'react-router-dom'
 import header from '../../theme/components/header'
 import routes from '../../utils/routes'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import { IoMdClose } from 'react-icons/io'
 
 const Header = () => {
-	const location = useLocation()
-	const isHome = location.pathname === '/' ? true : false
+	const { pathname } = useLocation()
+	const isHome = pathname === '/' ? true : false
 
+	const menuOverlayRef = React.createRef()
 	const headerRef = React.createRef()
 
 	const [isOnTop, setIsOnTop] = useState(null)
@@ -22,6 +24,10 @@ const Header = () => {
 
 	const recipe = useSlotRecipe({ recipe: header })
 	const styles = recipe({ variant })
+
+	useEffect(() => {
+		menuOverlayRef.current.classList.remove('open')
+	}, [pathname])
 
 	useEffect(() => {
 		var r = document.querySelector(':root')
@@ -59,7 +65,7 @@ const Header = () => {
 				{routes.map((route, index) => {
 					route = route[Object.keys(route)[0]]
 					if (route.hidden) return
-					let isCurrent = location.pathname === route.path || location.pathname === route.path + '/'
+					let isCurrent = pathname === route.path || pathname === route.path + '/'
 					return (
 						<Button
 							key={index}
@@ -87,11 +93,45 @@ const Header = () => {
 					PRENOTA ORA
 				</Button>
 			</Box>
-			<Button {...styles.hamburgerWrapper} variant="icon">
+			<Button
+				{...styles.hamburgerWrapper}
+				onClick={() => menuOverlayRef.current.classList.toggle('open')}
+				variant="icon"
+			>
 				<Icon color={isHome ? (isOnTop ? 'white' : 'black') : 'black'}>
 					<RxHamburgerMenu />
 				</Icon>
 			</Button>
+			<Box {...styles.mobileMenuWrapper} ref={menuOverlayRef}>
+				<Icon
+					color={'white'}
+					fontSize={'2xl'}
+					onClick={() => menuOverlayRef.current.classList.toggle('open')}
+					position={'absolute'}
+					right={8}
+					top={8}
+				>
+					<IoMdClose />
+				</Icon>
+				{routes.map((route, index) => {
+					route = route[Object.keys(route)[0]]
+					if (route.hidden) return
+					let isCurrent = pathname === route.path || pathname === route.path + '/'
+					return (
+						<Button
+							key={index}
+							as={RouterLink}
+							to={route.path}
+							className={isCurrent ? 'current' : ''}
+							{...(isCurrent ? { 'aria-current': 'page' } : {})}
+							variant={'header'}
+							css={styles.navButton}
+						>
+							{route.title}
+						</Button>
+					)
+				})}
+			</Box>
 		</Box>
 	)
 }

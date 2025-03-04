@@ -11,15 +11,10 @@ import labels from '../labels'
 const MemberSection = ({ isRight, labels, image, alt }) => {
 	return (
 		<Box
-			{...(isRight ? { flexDirection: 'row-reverse' } : null)}
 			{...styles.section}
-			h={'max(calc(100dvh - var(--header-height)), 550px)'}
-			position={'sticky'}
-			top={'var(--header-height)'}
-			bg={'white'}
-			borderTop={'1px solid #E5E5E5'}
+			{...(isRight ? { flexDirection: { base: 'column-reverse', lg: 'row-reverse' } } : null)}
 		>
-			<Box width={'45vw'} paddingRight={'5vw'}>
+			<Box width={{ base: 'unset', lg: '45vw' }} paddingRight={{ base: 'unset', lg: '5vw' }}>
 				<Box {...styles.heading}>
 					<Heading
 						as="h2"
@@ -63,7 +58,7 @@ const ChiSiamo = () => {
 		<Box>
 			<Box position={'relative'} bgImage={`url(${image_src})`} {...styles.main_image}>
 				<Box {...styles.overlayText}>
-					<Text textStyle={'6xl'} fontWeight={600} color={'white'}>
+					<Text textStyle={{ base: '4xl', lg: '6xl' }} fontWeight={600} color={'white'}>
 						IL NOSTRO TEAM
 					</Text>
 				</Box>

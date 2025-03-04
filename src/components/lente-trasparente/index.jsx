@@ -12,8 +12,8 @@ const Lenti = () => {
 			display={'flex'}
 			justifyContent={'space-around'}
 			position={'absolute'}
-			zIndex={-1}
-			transform={'rotateZ(-25deg)'}
+			zIndex={{ base: 0, lg: -1 }}
+			transform={{ base: 'rotateZ(-25deg) translateX(-60%)', lg: 'rotateZ(-25deg)' }}
 		>
 			<style>
 				{`
@@ -24,7 +24,12 @@ const Lenti = () => {
 				`}
 			</style>
 			{Array.from({ length: 5 }, (_, i) => (
-				<Image key={i} src={image_src} margin={'-70px'} style={rotatingStyle} />
+				<Image
+					key={i}
+					src={image_src}
+					margin={{ base: '-50px', lg: '-70px' }}
+					style={rotatingStyle}
+				/>
 			))}
 		</Box>
 	)

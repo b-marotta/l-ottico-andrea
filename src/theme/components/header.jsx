@@ -60,6 +60,27 @@ export default {
 			fontWeight: '500',
 			textDecoration: 'none',
 		},
+		mobileMenuWrapper: {
+			position: 'fixed',
+			top: '0',
+			right: '0',
+			display: { base: 'flex', lg: 'none' },
+			flexDirection: 'column',
+			alignItems: 'center',
+			justifyContent: 'center',
+			color: 'black',
+			bg: 'primary',
+			gap: 8,
+			opacity: 0.95,
+			transition: 'all 0.4s ease-in',
+			transform: 'translateX(100%)',
+			h: '100dvh',
+			w: '100dvw',
+
+			'&.open': {
+				transform: 'translateX(0)',
+			},
+		},
 	},
 	variants: {
 		variant: {
@@ -76,10 +97,10 @@ export default {
 						bg: 'primary',
 					},
 					'&.current': {
-						color: 'primary',
+						color: { base: 'white', lg: 'primary' },
 
 						_before: {
-							bg: 'primary',
+							bg: { base: 'white', lg: 'primary' },
 							w: '100%',
 						},
 					},
@@ -119,10 +140,10 @@ export default {
 						bg: 'primary',
 					},
 					'&.current': {
-						color: 'primary',
+						color: { base: 'white', lg: 'primary' },
 
 						_before: {
-							bg: 'primary',
+							bg: { base: 'white', lg: 'primary' },
 							w: '100%',
 						},
 					},
@@ -138,5 +159,6 @@ export default {
 		'hamburgerWrapper',
 		'ctaWrapper',
 		'logoWrapper',
+		'mobileMenuWrapper',
 	],
 }

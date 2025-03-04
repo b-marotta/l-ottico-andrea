@@ -1,13 +1,4 @@
-import {
-	Box,
-	Image,
-	Text,
-	Button,
-	useSlotRecipe,
-	Icon as ChakraIcon,
-	Flex,
-	Grid,
-} from '@chakra-ui/react'
+import { Box, Image, Text, Button, useSlotRecipe, Icon as ChakraIcon, Flex } from '@chakra-ui/react'
 import React from 'react'
 import image_src from '../assets/photos/01.jpg'
 import image_src_2 from '../assets/photos/3.jpg'
@@ -23,6 +14,7 @@ import routes from '../utils/routes'
 import { Icon } from '../theme/components/icons'
 import { LiaIdCardSolid } from 'react-icons/lia'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
+import clickGif from '../assets/other/click.gif'
 
 const Home = () => {
 	const recipe = useSlotRecipe({ recipe: home })
@@ -56,9 +48,13 @@ const Home = () => {
 					dangerouslySetInnerHTML={{ __html: labels.home.buttons.discoverMore }}
 				/>
 			</Box>
-			<Box {...styles.sectionShortWho} bgImage={`url(${image_src_2})`}>
+			<Box
+				{...styles.sectionShortWho}
+				bgImage={{ base: null, lg: `url(${image_src_2})` }}
+				backgroundColor={{ base: 'primary', lg: '#6b6b6b' }}
+			>
 				<Box {...styles.sectionContent}>
-					<Text {...styles.textCenter} textStyle={'4xl'} fontWeight={'500'}>
+					<Text {...styles.textCenter} textStyle={{ base: '3xl', lg: '4xl' }} fontWeight={'500'}>
 						Chi siamo
 					</Text>
 					<Text
@@ -78,8 +74,17 @@ const Home = () => {
 			<Box {...styles.section} bgImage={`url(${image_src_bg_line})`} backgroundSize="contain">
 				<Box {...styles.sectionContent}>
 					<Text {...styles.sectionTitle}>{labels.home.services}</Text>
-					<Grid gap={8} gridTemplateColumns={'1fr 1fr 1fr'} my={4}>
-						<Box {...styles.servicesBoxWrapper}>
+					<Box
+						display={{ base: 'flex', lg: 'grid' }}
+						gridTemplateColumns={'1fr 1fr 1fr'}
+						flexDirection={'column'}
+						gap={8}
+						my={4}
+					>
+						<Box
+							{...styles.servicesBoxWrapper}
+							onClick={(e) => e.currentTarget.classList.toggle('active')}
+						>
 							<Box {...styles.servicesBox} className="servicesBox">
 								<Box {...styles.front}>
 									<Image
@@ -88,6 +93,11 @@ const Home = () => {
 										{...styles.imageServices}
 									/>
 									<Text {...styles.titleServices}>Analisi visive optometriche</Text>
+									<Image
+										src={clickGif}
+										{...styles.clickGif}
+										display={{ base: 'block', lg: 'none' }}
+									/>
 								</Box>
 								<Box {...styles.back}>
 									<Text {...styles.innerTextServices}>
@@ -97,11 +107,19 @@ const Home = () => {
 								</Box>
 							</Box>
 						</Box>
-						<Box {...styles.servicesBoxWrapper2}>
+						<Box
+							{...styles.servicesBoxWrapper2}
+							onClick={(e) => e.currentTarget.classList.toggle('active')}
+						>
 							<Box {...styles.servicesBox} className="servicesBox">
 								<Box {...styles.front}>
 									<Image alt="Lenti a contatto" src={image_src_lens} {...styles.imageServices} />
 									<Text {...styles.titleServices}>Lenti a contatto</Text>
+									<Image
+										src={clickGif}
+										{...styles.clickGif}
+										display={{ base: 'block', lg: 'none' }}
+									/>
 								</Box>
 								<Box {...styles.back2}>
 									<Text {...styles.innerTextServices}>
@@ -111,7 +129,10 @@ const Home = () => {
 								</Box>
 							</Box>
 						</Box>
-						<Box {...styles.servicesBoxWrapper}>
+						<Box
+							{...styles.servicesBoxWrapper}
+							onClick={(e) => e.currentTarget.classList.toggle('active')}
+						>
 							<Box {...styles.servicesBox} className="servicesBox">
 								<Box {...styles.front}>
 									<Image
@@ -120,13 +141,18 @@ const Home = () => {
 										title="Misurazioni strumentali"
 									/>
 									<Text {...styles.titleServices}>Misurazioni strumentali</Text>
+									<Image
+										src={clickGif}
+										{...styles.clickGif}
+										display={{ base: 'block', lg: 'none' }}
+									/>
 								</Box>
 								<Box {...styles.back}>
 									<Text {...styles.innerTextServices}>{labels.home.text.services}</Text>
 								</Box>
 							</Box>
 						</Box>
-					</Grid>
+					</Box>
 					<Box {...styles.buttonContainer}>
 						<Button
 							variant={'outline'}
@@ -183,7 +209,12 @@ const Home = () => {
 						direttamente in negozio, veloci e conformi alle normative. Passa a trovarci!
 					</Text>
 				</Box>
-				<Box m={'auto'} h={'120px'} w={'1px'} bg={'gray.200'} />
+				<Box
+					m={'auto'}
+					h={{ base: '1px', lg: '120px' }}
+					w={{ base: '100%', lg: '1px' }}
+					bg={'gray.200'}
+				/>
 				<Box {...styles.miniSection}>
 					<Icon
 						name="Alma"
@@ -198,7 +229,12 @@ const Home = () => {
 						funziona!
 					</Text>
 				</Box>
-				<Box m={'auto'} h={'120px'} w={'1px'} bg={'gray.200'} />
+				<Box
+					m={'auto'}
+					h={{ base: '1px', lg: '120px' }}
+					w={{ base: '100%', lg: '1px' }}
+					bg={'gray.200'}
+				/>
 				<Box {...styles.miniSectionLogosWrapper}>
 					<Flex flexDirection={'column'} alignItems={'center'} gap={2}>
 						<Text width="auto" textStyle={'lg'} fontWeight={'500'}>

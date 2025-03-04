@@ -1,5 +1,5 @@
 import { Button, Flex, Text } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const consentCookie = () => localStorage.getItem('cookieConsent') || false
@@ -13,22 +13,6 @@ const CookieBanner = () => {
 		localStorage.setItem('cookieConsent', 'true')
 		setIsVisible(false)
 	}
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 1000) {
-				localStorage.setItem('cookieConsent', 'true')
-				setIsVisible(false)
-				window.removeEventListener('scroll', handleScroll)
-			}
-		}
-
-		window.addEventListener('scroll', handleScroll)
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	}, [])
 
 	return (
 		<Flex
@@ -44,7 +28,7 @@ const CookieBanner = () => {
 				backgroundColor: 'white',
 				textAlign: 'center',
 				boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
-				zIndex: 1000,
+				zIndex: 10000,
 				alignItems: 'center',
 				opacity: isVisible ? 0.9 : 0,
 				pointerEvents: isVisible ? 'all' : 'none',

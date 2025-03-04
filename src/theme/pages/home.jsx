@@ -24,7 +24,7 @@ export default {
 			gap: 4,
 			justifyContent: 'center',
 			py: 12,
-			px: 28,
+			px: { base: 12, lg: 28 },
 			m: 'auto',
 			textAlign: 'center',
 			flex: 1,
@@ -53,7 +53,7 @@ export default {
 			paddingY: 20,
 			paddingX: { sm: 6, lg: 24 },
 			backgroundPosition: '50% 50%',
-			background: 'rgb(107, 107, 107)',
+			background: '#6b6b6b',
 			backgroundBlendMode: 'multiply',
 			backgroundAttachment: 'fixed',
 			backgroundSize: 'cover',
@@ -80,7 +80,7 @@ export default {
 			overflowX: 'hidden',
 		},
 		mapInfoWrapper: {
-			w: '45vw',
+			w: { base: '90vw', lg: '45vw' },
 			flex: '1 0 auto',
 			height: '100%',
 			alignItems: 'center',
@@ -89,6 +89,7 @@ export default {
 			justifyContent: 'center',
 			gap: 8,
 			textStyle: 'xl',
+			my: 8,
 		},
 		mapInfoBox: {
 			display: 'flex',
@@ -101,7 +102,7 @@ export default {
 		textCenter: {
 			color: 'white',
 			textAlign: 'center',
-			paddingX: { sm: 0, lg: 12 },
+			paddingX: { base: 6, lg: 12 },
 			textStyle: 'lg',
 		},
 		buttonContainer: {
@@ -109,7 +110,7 @@ export default {
 			margin: 'auto',
 		},
 		sectionTitle: {
-			textStyle: '3xl',
+			textStyle: { base: '2xl', lg: '3xl' },
 			textTransform: 'uppercase',
 			fontWeight: '500',
 			color: 'primary',
@@ -117,6 +118,7 @@ export default {
 		},
 		threeStyleSection: {
 			display: 'flex',
+			flexDirection: { base: 'column', lg: 'row' },
 		},
 		titleServices: {
 			textStyle: 'xl',
@@ -128,6 +130,14 @@ export default {
 			left: '50%',
 			textAlign: 'center',
 			w: '70%',
+		},
+		clickGif: {
+			position: 'absolute',
+			bottom: '5%',
+			right: '0',
+			transform: 'translateX(-50%)',
+			filter: 'invert(1)',
+			mixBlendMode: 'lighten',
 		},
 		innerTextServices: {
 			textStyle: 'lg',
@@ -181,10 +191,20 @@ export default {
 					transform: 'rotateY(180deg)',
 				},
 			},
+			'&.active': {
+				'& .servicesBox': {
+					transform: 'rotateY(180deg)',
+				},
+			},
 		},
 		servicesBoxWrapper2: {
 			aspectRatio: '1/1',
 			_hover: {
+				'& .servicesBox': {
+					transform: 'rotateX(180deg)',
+				},
+			},
+			'&.active': {
 				'& .servicesBox': {
 					transform: 'rotateX(180deg)',
 				},
@@ -221,5 +241,6 @@ export default {
 		'servicesBoxWrapper',
 		'back2',
 		'servicesBoxWrapper2',
+		'clickGif',
 	],
 }

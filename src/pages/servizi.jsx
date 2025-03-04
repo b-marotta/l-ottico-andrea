@@ -14,20 +14,26 @@ const Servizi = () => {
 		<Box>
 			<Box position={'relative'} bgImage={`url(${image_src})`} {...styles.main_image}>
 				<Box {...styles.overlayText}>
-					<Text textStyle={'6xl'} fontWeight={600} color={'white'}>
+					<Text textStyle={{ base: '4xl', lg: '6xl' }} fontWeight={600} color={'white'}>
 						I NOSTRI SERVIZI
 					</Text>
 				</Box>
 			</Box>
 			<Box py={16} px={6}>
 				<Box textAlign={'center'}>
-					<Text textStyle={'3xl'} fontWeight={600} color={'primary'}>
+					<Text textStyle={{ base: '2xl', lg: '3xl' }} fontWeight={600} color={'primary'}>
 						Analisi visiva optometrica
 					</Text>
 					<Text textStyle={'lg'} fontWeight={400} color={'gray.400'} mb={6}>
 						Il cuore dei nostri servizi
 					</Text>
-					<Text textStyle={'xl'} fontWeight={400} color={'gray.600'} w={'60%'} mx={'auto'}>
+					<Text
+						textStyle={{ base: 'lg', lg: 'xl' }}
+						fontWeight={400}
+						color={'gray.600'}
+						w={{ base: '100%', lg: '60%' }}
+						mx={'auto'}
+					>
 						Un processo accurato che utilizza tecniche di rifrazione ottica per determinare con
 						precisione le tue diottrie. Attraverso l&apos;uso di strumenti all&apos;avanguardia,
 						identifichiamo le lenti ideali per migliorare la tua vista, offrendoti soluzioni su
@@ -38,18 +44,25 @@ const Servizi = () => {
 			<Separator />
 			<Box py={16} px={6}>
 				<Box textAlign={'center'} pb={16}>
-					<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
+					<Text textStyle={{ base: '2xl', lg: '3xl' }} fontWeight={600} color={'primary'} mb={6}>
 						Applicazione lenti a contatto
 					</Text>
-					<Text textStyle={'xl'} fontWeight={400} color={'gray.600'} w={'60%'} mx={'auto'}>
+					<Text
+						textStyle={{ base: 'lg', lg: 'xl' }}
+						fontWeight={400}
+						color={'gray.600'}
+						w={{ base: '100%', lg: '60%' }}
+						mx={'auto'}
+					>
 						Nel nostro centro ottico, offriamo una vasta gamma di soluzioni per le lenti a contatto,
 						adattate alle esigenze specifiche di ogni cliente.
 					</Text>
 				</Box>
 				<Box
-					w={'60%'}
+					w={{ base: '100%', lg: '60%' }}
 					mx={'auto'}
-					display={'grid'}
+					display={{ base: 'flex', lg: 'grid' }}
+					flexDirection={{ base: 'column', lg: 'unset' }}
 					gridTemplateColumns={'1fr 1fr'}
 					alignItems={'center'}
 					gap={12}
@@ -88,22 +101,28 @@ const Servizi = () => {
 			<Separator />
 			<Box py={16} px={6}>
 				<Box textAlign={'center'} pb={16}>
-					<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
+					<Text textStyle={{ base: '2xl', lg: '3xl' }} fontWeight={600} color={'primary'} mb={6}>
 						Misurazioni strumentali
 					</Text>
-					<Text textStyle={'xl'} fontWeight={400} color={'gray.600'} w={'60%'} mx={'auto'}>
+					<Text
+						textStyle={{ base: 'lg', lg: 'xl' }}
+						fontWeight={400}
+						color={'gray.600'}
+						w={{ base: '100%', lg: '60%' }}
+						mx={'auto'}
+					>
 						Utilizziamo tecnologie avanzate per effettuare misurazioni strumentali precise e
 						affidabili, garantendo una valutazione completa della salute visiva di ogni cliente.
 					</Text>
 				</Box>
 
 				<Box
-					w={'70%'}
+					w={{ base: '100%', lg: '70%' }}
 					mx={'auto'}
 					gapX={24}
 					gapY={12}
 					textAlign={'center'}
-					display={'grid'}
+					display={{ base: 'flex', lg: 'grid' }}
 					gridTemplateColumns={'1fr 1fr'}
 					flexWrap={'wrap'}
 				>
