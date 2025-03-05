@@ -23,6 +23,11 @@ export default {
 				bg: 'transparent',
 				px: 3,
 			},
+			unset: {
+				bg: 'transparent',
+				px: 0,
+				py: 0,
+			},
 			solid: {
 				bg: 'primary',
 				color: 'white',
