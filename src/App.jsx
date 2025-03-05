@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Header from './components/header'
 import { Helmet } from 'react-helmet'
-import { SITE_DESCRIPTION, SITE_NAME } from './utils/global.variables'
+import { SITE_DESCRIPTION, SITE_TITLE } from './utils/global.variables'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import routes from './utils/routes'
 import BottomRightOverlay from './components/bottom-right-overlay'
@@ -17,7 +17,7 @@ const App = () => {
 			<div className="App">
 				<Helmet>
 					{/* Metadata Start */}
-					<title>{SITE_NAME}</title>
+					<title>{SITE_TITLE}</title>
 					<meta name="description" content={SITE_DESCRIPTION} />
 
 					{/* Keywords */}
@@ -27,7 +27,7 @@ const App = () => {
 					/>
 
 					{/* Metadati Open Graph per social media */}
-					<meta property="og:title" content={SITE_NAME} />
+					<meta property="og:title" content={SITE_TITLE} />
 					<meta property="og:description" content={SITE_DESCRIPTION} />
 					<meta property="og:type" content="website" />
 					<meta property="og:url" content="https://www.lotticoandrea.it" />
