@@ -131,6 +131,18 @@ const Header = () => {
 						</Button>
 					)
 				})}
+				<Box {...styles.ctaWrapperMobile}>
+					<Button
+						as={Link}
+						href={CALENDAR_LINK}
+						target="_blank"
+						{...styles.ctaButton}
+						variant={isHome ? (isOnTop ? 'outline_w' : 'solid') : 'solid'}
+						textDecoration={'none'}
+					>
+						PRENOTA ORA
+					</Button>
+				</Box>
 			</Box>
 		</Box>
 	)

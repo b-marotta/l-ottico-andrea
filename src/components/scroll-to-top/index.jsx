@@ -35,18 +35,17 @@ const ScrollToTop = () => {
 			opacity={showButton ? 0.6 : 0}
 			_hover={{ opacity: 1 }}
 			pointerEvents={showButton ? 'auto' : 'none'}
-			style={{
-				padding: '10px 15px',
-				fontSize: '24px',
-				backgroundColor: 'primary.light',
-				color: '#fff',
-				border: 'none',
-				borderRadius: '25px',
-				cursor: 'pointer',
-				transition: 'opacity 0.3s',
-				zIndex: 100,
-			}}
-			width={{ base: 0, lg: 'auto' }}
+			fontSize="24px"
+			padding="10px 15px"
+			color="#fff"
+			backgroundColor="primary.light"
+			borderRadius="25px"
+			border="none"
+			cursor="pointer"
+			transition="opacity 0.3s"
+			zIndex="100"
+			h={{ base: '44px', md: 'auto' }}
+			width={{ base: '44px', md: 'auto' }}
 		>
 			<GoArrowUp />
 			<Text textStyle={'md'} fontWeight={'500'} display={{ base: 'none', lg: 'block' }}>

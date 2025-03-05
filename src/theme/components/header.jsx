@@ -51,6 +51,10 @@ export default {
 			textAlign: 'right',
 			display: { base: 'none', lg: 'flex' },
 		},
+		ctaWrapperMobile: {
+			position: 'absolute',
+			bottom: '32px',
+		},
 		hamburgerWrapper: {
 			display: { base: 'flex', lg: 'none' },
 		},
@@ -158,6 +162,7 @@ export default {
 		'navLinks',
 		'hamburgerWrapper',
 		'ctaWrapper',
+		'ctaWrapperMobile',
 		'logoWrapper',
 		'mobileMenuWrapper',
 	],
