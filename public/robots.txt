@@ -1,3 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
+# Permettere l'indicizzazione di tutte le pagine
 User-agent: *
-Disallow:
+Allow: /
+
+# Rallentare l'indicizzazione per non sovraccaricare il sito
+Crawl-delay: 10
