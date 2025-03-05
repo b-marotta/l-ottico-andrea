@@ -51,7 +51,7 @@ const Header = () => {
 
 	return (
 		<Box {...styles.wrapper} ref={headerRef}>
-			<Box {...styles.logoWrapper}>
+			<Box {...styles.logoWrapper} as={RouterLink} to="/">
 				<Image src={isHome ? (isOnTop ? logo_white : logo) : logo} alt="Prova" w={12} />
 				<Text
 					textStyle={{ base: 'xl', lg: '2xl' }}
