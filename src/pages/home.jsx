@@ -52,7 +52,7 @@ const Home = () => {
 				<Box m={'auto'}>
 					<Button
 						as={Link}
-						href={CALENDAR_LINK}
+						to={CALENDAR_LINK}
 						target="_blank"
 						{...styles.ctaButton}
 						variant={'outline'}
