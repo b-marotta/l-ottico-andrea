@@ -15,6 +15,7 @@ import { Icon } from '../theme/components/icons'
 import { LiaIdCardSolid } from 'react-icons/lia'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 import clickGif from '../assets/other/click.gif'
+import { CALENDAR_LINK } from '../utils/global.variables'
 
 const Home = () => {
 	const recipe = useSlotRecipe({ recipe: home })
@@ -36,6 +37,29 @@ const Home = () => {
 						color={'gray.300'}
 						dangerouslySetInnerHTML={{ __html: labels.home.main.subtitle }}
 					/>
+				</Box>
+			</Box>
+			<Box
+				display={{ base: 'flex', lg: 'none' }}
+				backgroundColor={'gray.100'}
+				flexDir={'column'}
+				py={8}
+			>
+				<Text {...styles.textCenter} mb={6} color={'primary'} textStyle={'xl'} fontWeight={'500'}>
+					Vieni a trovarci in negozio!
+				</Text>
+
+				<Box m={'auto'}>
+					<Button
+						as={Link}
+						href={CALENDAR_LINK}
+						target="_blank"
+						{...styles.ctaButton}
+						variant={'outline'}
+						textDecoration={'none'}
+					>
+						PRENOTA ORA
+					</Button>
 				</Box>
 			</Box>
 			<Box {...styles.brandsSection}>
