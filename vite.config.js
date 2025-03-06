@@ -9,19 +9,4 @@ export default defineConfig({
 		environment: 'jsdom',
 		setupFiles: ['./src/setupTests.js'],
 	},
-	build: {
-		rollupOptions: {
-			output: {
-				manualChunks: (id) => {
-					// Chunk personalizzati per il tuo codice
-					if (id.includes('/components/ui/')) {
-						return 'ui-components'
-					}
-					if (id.includes('/pages/')) {
-						return 'pages'
-					}
-				},
-			},
-		},
-	},
 })
