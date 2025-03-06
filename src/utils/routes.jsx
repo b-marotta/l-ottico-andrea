@@ -37,8 +37,8 @@ export default [
 	},
 	{
 		privacyPolicy: {
-			path: '*', // 404
-			component: <PrivacyPolicy to={'/'} />,
+			path: '/privacy-policy', // 404
+			component: <PrivacyPolicy />,
 			hidden: true,
 		},
 	},

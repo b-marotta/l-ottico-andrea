@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import './App.css'
 import Header from './components/header'
 import { Helmet } from 'react-helmet'
 import { SITE_DESCRIPTION, SITE_TITLE } from './utils/global.variables'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import routes from './utils/routes'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import BottomRightOverlay from './components/bottom-right-overlay'
 import Footer from './components/footer'
 import CookieBanner from './components/cookie-banner'
 import { Box } from '@chakra-ui/react'
 import main_image_src from './assets/photos/10.jpg'
+
+const Home = lazy(() => import('./pages/home'))
+const ChiSiamo = lazy(() => import('./pages/chi-siamo'))
+const Servizi = lazy(() => import('./pages/servizi'))
+const Prodotti = lazy(() => import('./pages/prodotti'))
+const PrivacyPolicy = lazy(() => import('./pages/privacy-policy'))
 
 const App = () => {
 	return (
@@ -59,12 +64,18 @@ const App = () => {
 				<BottomRightOverlay />
 				<Header />
 				<Box id="body" minH={'100vh'}>
-					<Routes>
-						{routes.map((route, index) => {
-							const key = Object.keys(route)[0]
-							return <Route key={index} path={route[key].path} element={route[key].component} />
-						})}
-					</Routes>
+					<Suspense>
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/chi-siamo" element={<ChiSiamo />} />
+							<Route path="/servizi" element={<Servizi />} />
+							<Route path="/prodotti" element={<Prodotti />} />
+							<Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+							{/* 404 */}
+							<Route path="*" element={<Navigate to={'/'} />} />
+						</Routes>
+					</Suspense>
 				</Box>
 				<Footer />
 			</div>
