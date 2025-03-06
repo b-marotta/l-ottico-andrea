@@ -26,7 +26,7 @@ export default {
 			title: 'Andrea Gianettoni',
 			subtitle: 'Il vostro amichevole ottico di quartiere',
 			description:
-				"Andrea Gianettoni si è diplomato in ottica nel 1989 e, dal 2002, si è specializzato in contattologia e optometria. Dopo aver maturato esperienza in diverse realtà del settore, nel 2005 ha deciso di aprire il proprio negozio, L'Ottico Andrea.<br />Nel 2024 ha ricevuto il prestigioso Salvino d'Argento, un riconoscimento per i suoi 35 anni di attività professionale, che svolge con grande passione. È apprezzato per la sua professionalità, cordialità e disponibilità.<br />Sempre in costante aggiornamento, è alla ricerca delle migliori soluzioni per i clienti, con un'attenzione particolare alla qualità delle montature e delle lenti. Dal 2018, il suo impegno è riconosciuto ogni anno con la nomina a centro ottico Zeiss Specialist, una certificazione di qualità e innovazione nel suo lavoro.",
+				"Andrea Gianettoni si è diplomato in ottica nel 1989 e, dal 2002, si è specializzato in contattologia e optometria. Dopo aver maturato esperienza in diverse realtà del settore, nel 2005 ha deciso di aprire il proprio negozio, L'Ottico Andrea.<br /><br />Nel 2024 ha ricevuto il prestigioso Salvino d'Argento, un riconoscimento per i suoi 35 anni di attività professionale, che svolge con grande passione. È apprezzato per la sua professionalità, cordialità e disponibilità.<br /><br />Sempre in costante aggiornamento, è alla ricerca delle migliori soluzioni per i clienti, con un'attenzione particolare alla qualità delle montature e delle lenti. Dal 2018, il suo impegno è riconosciuto ogni anno con la nomina a centro ottico Zeiss Specialist, una certificazione di qualità e innovazione nel suo lavoro.",
 		},
 		thomas: {
 			title: 'Thomas',
