@@ -49,6 +49,21 @@ const Header = () => {
 		}
 	}, [])
 
+	// Precarica le pagine dopo che la pagina è caricata e il browser è inattivo
+	useEffect(() => {
+		const preloadPages = () => {
+			const requestIdleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 1))
+
+			requestIdleCallback(() => {
+				import('../../pages/home')
+				import('../../pages/chi-siamo')
+				import('../../pages/servizi')
+				import('../../pages/prodotti')
+			})
+		}
+		preloadPages()
+	}, [])
+
 	return (
 		<Box {...styles.wrapper} ref={headerRef}>
 			<Box {...styles.logoWrapper} as={RouterLink} to="/">
