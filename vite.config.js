@@ -20,9 +20,6 @@ export default defineConfig({
 					if (id.includes('/pages/')) {
 						return 'pages'
 					}
-					if (id.includes('/react-')) {
-						return 'react'
-					}
 				},
 			},
 		},
