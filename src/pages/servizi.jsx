@@ -144,8 +144,8 @@ const Servizi = () => {
 							</Text>
 							<Image src={opacity} w="100%" h="300px" borderRadius={6} />
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
-								Rilevazione di eventuali alterazioni del cristallino tramite retro-illuminazione,
-								contribuisce a mantenere alta il benessere oculare complessivo.
+								Rilevazione ripetibile e confrontabile tramite retro illuminazione della trasparenza
+								del cristallino.
 							</Text>
 						</Stack>
 					</Box>
@@ -163,8 +163,8 @@ const Servizi = () => {
 								borderRadius={6}
 							/>
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
-								Metodo non invasivo per misurare la pressione intraoculare (IOP), fornisce
-								un&apos;importante indicazione sullo stato di benessere dell&apos;occhio.
+								Metodo non invasivo per stimare la pressione intraoculare (IOP) anche in relazione
+								con i dati della pachimetria.
 							</Text>
 						</Stack>
 					</Box>
@@ -176,7 +176,7 @@ const Servizi = () => {
 							<Image src={lacrimale} w="100%" h="300px" borderRadius={6} />
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
 								L&apos;indagine lacrimale valuta quantità e qualità del film lacrimale, aiuta a
-								prevenire problemi di secchezza oculare e a garantire il comfort visivo.
+								evidenziare problemi di secchezza oculare e a garantire il comfort visivo.
 							</Text>
 						</Stack>
 					</Box>
