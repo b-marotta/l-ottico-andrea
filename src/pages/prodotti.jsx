@@ -94,6 +94,7 @@ export const MontatureImages = ({ styles }) => {
 					src={images[key]}
 					alt={`Brand ${index}`}
 					fit={'contain'}
+					filter={'grayscale(1) brightness(0.5)'}
 					{...styles.image}
 				/>
 			</Box>
