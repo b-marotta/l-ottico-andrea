@@ -133,7 +133,7 @@ const Servizi = () => {
 							<Image src={pachimetria} w="100%" h="300px" borderRadius={6} />
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
 								Esame non invasivo, attraverso il quale è possibile ottenere una mappa della
-								curvatura dello spessore corneale.
+								curvatura dello spessore corneale, assicurandosi della corretta morfologia.
 							</Text>
 						</Stack>
 					</Box>
