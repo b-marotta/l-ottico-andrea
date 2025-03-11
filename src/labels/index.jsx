@@ -18,7 +18,7 @@ export default {
 		brands: 'I nostri prodotti',
 		text: {
 			services:
-				"Offriamo diverse misurazioni strumentali: topografia e pachimetria corneale, analisi dell'opacità del cristallino, tonometria a soffio e indagine lacrimale per una valutazione completa della salute oculare.",
+				"Offriamo diverse misurazioni strumentali: topografia e pachimetria corneale, analisi dell'opacità del cristallino, tonometria a soffio e indagine lacrimale per una valutazione completa dell'equilibrio oculare.",
 		},
 	},
 	chi_siamo: {

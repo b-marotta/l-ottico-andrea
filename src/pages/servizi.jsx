@@ -34,7 +34,7 @@ const Servizi = () => {
 						w={{ base: '100%', lg: '60%' }}
 						mx={'auto'}
 					>
-						Un processo accurato che utilizza tecniche di rifrazione ottica per determinare con
+						Un processo accurato che utilizza tecniche di refrazione ottica per determinare con
 						precisione le tue diottrie. Attraverso l&apos;uso di strumenti all&apos;avanguardia,
 						identifichiamo le lenti ideali per migliorare la tua vista, offrendoti soluzioni su
 						misura per soddisfare le tue esigenze.
@@ -87,10 +87,9 @@ const Servizi = () => {
 						</Text>
 						<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
 							Siamo specializzati nell&apos;applicazione di lenti a contatto rigide gas permeabili
-							(RGP), ideali per chi necessita di una correzione visiva più stabile e duratura. Per
-							chi presenta irregolarità corneali, offriamo lenti a contatto RGP su misura,
-							progettate per adattarsi perfettamente alla superficie oculare e migliorare
-							significativamente la qualità visiva.
+							(RGP) su misura progettate per adattarsi perfettamente alla superficie oculare e
+							migliorare significativamente la qualità visiva, ideali per chi necessita di una
+							correzione più stabile e duratura e Per chi presenta irregolarità corneali
 						</Text>
 					</Box>
 					<Box bg={'gray.100'} borderRadius={16}>
@@ -112,7 +111,7 @@ const Servizi = () => {
 						mx={'auto'}
 					>
 						Utilizziamo tecnologie avanzate per effettuare misurazioni strumentali precise e
-						affidabili, garantendo una valutazione completa della salute visiva di ogni cliente.
+						affidabili, con possibilità di telerefertazione oculistica.
 					</Text>
 				</Box>
 
@@ -133,8 +132,8 @@ const Servizi = () => {
 							</Text>
 							<Image src={pachimetria} w="100%" h="300px" borderRadius={6} />
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
-								Esame non invasivo, volto a valutare la forma e lo spessore della cornea,
-								assicurando una correzione visiva ottimale e personalizzata.
+								Esame non invasivo, attraverso il quale è possibile ottenere una mappa della
+								curvatura dello spessore corneale.
 							</Text>
 						</Stack>
 					</Box>
@@ -146,7 +145,7 @@ const Servizi = () => {
 							<Image src={opacity} w="100%" h="300px" borderRadius={6} />
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
 								Rilevazione di eventuali alterazioni del cristallino tramite retro-illuminazione,
-								contribuisce a mantenere alta la salute oculare complessiva.
+								contribuisce a mantenere alta il benessere oculare complessivo.
 							</Text>
 						</Stack>
 					</Box>
@@ -165,7 +164,7 @@ const Servizi = () => {
 							/>
 							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
 								Metodo non invasivo per misurare la pressione intraoculare (IOP), fornisce
-								un&apos;importante indicazione sullo stato di salute degli occhi.
+								un&apos;importante indicazione sullo stato di benessere dell&apos;occhio.
 							</Text>
 						</Stack>
 					</Box>
