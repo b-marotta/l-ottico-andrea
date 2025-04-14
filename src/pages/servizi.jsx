@@ -3,6 +3,7 @@ import React from 'react'
 import image_src from '../assets/photos/02.jpg'
 import styles from '../theme/pages/servizi'
 import lac_src from '../assets/other/lac.jpg'
+import orto_src from '../assets/other/orto.png'
 import lac_2_src from '../assets/other/lac_2.png'
 import pachimetria from '../assets/other/pachimetria.jpg'
 import opacity from '../assets/other/opacity.webp'
@@ -94,6 +95,20 @@ const Servizi = () => {
 					</Box>
 					<Box bg={'gray.100'} borderRadius={16}>
 						<Image src={lac_2_src} mixBlendMode={'multiply'} my={6} />
+					</Box>
+					<Box>
+						<Image src={orto_src} borderRadius={16} />
+					</Box>
+					<Box>
+						<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
+							ORTOCHERATOLOGIA
+						</Text>
+						<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
+							Pratica contattologia, attraverso la quale si può correggere in maniera reversibile
+							difetti visivi di bassa-media entità. Utilizzando una L.A.C. rigida durante la notte,
+							è possibile modificare il profilo corneale al fine di poter stare senza occhiali
+							durante il giorno avendo la massima acutezza visiva possibile.
+						</Text>
 					</Box>
 				</Box>
 			</Box>
