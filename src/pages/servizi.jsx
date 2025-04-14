@@ -59,56 +59,78 @@ const Servizi = () => {
 						adattate alle esigenze specifiche di ogni cliente.
 					</Text>
 				</Box>
-				<Box
-					w={{ base: '100%', lg: '60%' }}
-					mx={'auto'}
-					display={{ base: 'flex', lg: 'grid' }}
-					flexDirection={{ base: 'column', lg: 'unset' }}
-					gridTemplateColumns={'1fr 1fr'}
-					alignItems={'center'}
-					gap={12}
-				>
-					<Box>
-						<Image src={lac_src} borderRadius={16} />
+				<Box gap={12} display={'flex'} flexDirection={'column'}>
+					<Box
+						w={{ base: '100%', lg: '60%' }}
+						mx={'auto'}
+						display={{ base: 'flex', lg: 'grid' }}
+						flexDirection={{ base: 'column', lg: 'unset' }}
+						gridTemplateColumns={'1fr 1fr'}
+						alignItems={'center'}
+						gap={12}
+					>
+						<Box>
+							<Image src={lac_src} borderRadius={16} />
+						</Box>
+						<Box>
+							<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
+								LAC morbide
+							</Text>
+							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
+								Proponiamo l&apos;applicazione di lenti a contatto morbide, sia su misura che
+								standard, per garantire il massimo comfort e una visione nitida. Queste lenti sono
+								ideali per chi cerca una soluzione confortevole e facile da utilizzare nella vita
+								quotidiana.
+							</Text>
+						</Box>
 					</Box>
-					<Box>
-						<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
-							LAC morbide
-						</Text>
-						<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
-							Proponiamo l&apos;applicazione di lenti a contatto morbide, sia su misura che
-							standard, per garantire il massimo comfort e una visione nitida. Queste lenti sono
-							ideali per chi cerca una soluzione confortevole e facile da utilizzare nella vita
-							quotidiana.
-						</Text>
+					<Box
+						w={{ base: '100%', lg: '60%' }}
+						mx={'auto'}
+						display={{ base: 'flex', lg: 'grid' }}
+						flexDirection={{ base: 'column-reverse', lg: 'unset' }}
+						gridTemplateColumns={'1fr 1fr'}
+						alignItems={'center'}
+						gap={12}
+					>
+						<Box textAlign={{ base: 'left', lg: 'right' }}>
+							<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
+								LAC RGP
+							</Text>
+							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
+								Siamo specializzati nell&apos;applicazione di lenti a contatto rigide gas permeabili
+								(RGP) su misura progettate per adattarsi perfettamente alla superficie oculare e
+								migliorare significativamente la qualità visiva, ideali per chi necessita di una
+								correzione più stabile e duratura e Per chi presenta irregolarità corneali
+							</Text>
+						</Box>
+						<Box bg={'gray.100'} borderRadius={16}>
+							<Image src={lac_2_src} mixBlendMode={'multiply'} my={6} />
+						</Box>
 					</Box>
-					<Box textAlign={'right'}>
-						<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
-							LAC RGP
-						</Text>
-						<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
-							Siamo specializzati nell&apos;applicazione di lenti a contatto rigide gas permeabili
-							(RGP) su misura progettate per adattarsi perfettamente alla superficie oculare e
-							migliorare significativamente la qualità visiva, ideali per chi necessita di una
-							correzione più stabile e duratura e Per chi presenta irregolarità corneali
-						</Text>
-					</Box>
-					<Box bg={'gray.100'} borderRadius={16}>
-						<Image src={lac_2_src} mixBlendMode={'multiply'} my={6} />
-					</Box>
-					<Box>
-						<Image src={orto_src} borderRadius={16} />
-					</Box>
-					<Box>
-						<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
-							ORTOCHERATOLOGIA
-						</Text>
-						<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
-							Pratica contattologia, attraverso la quale si può correggere in maniera reversibile
-							difetti visivi di bassa-media entità. Utilizzando una L.A.C. rigida durante la notte,
-							è possibile modificare il profilo corneale al fine di poter stare senza occhiali
-							durante il giorno avendo la massima acutezza visiva possibile.
-						</Text>
+					<Box
+						w={{ base: '100%', lg: '60%' }}
+						mx={'auto'}
+						display={{ base: 'flex', lg: 'grid' }}
+						flexDirection={{ base: 'column', lg: 'unset' }}
+						gridTemplateColumns={'1fr 1fr'}
+						alignItems={'center'}
+						gap={12}
+					>
+						<Box bg={'gray.100'} borderRadius={16}>
+							<Image src={orto_src} borderRadius={16} />
+						</Box>
+						<Box>
+							<Text textStyle={'3xl'} fontWeight={600} color={'primary'} mb={6}>
+								ORTOCHERATOLOGIA
+							</Text>
+							<Text textStyle={'lg'} fontWeight={400} color={'gray.600'}>
+								Pratica contattologia, attraverso la quale si può correggere in maniera reversibile
+								difetti visivi di bassa-media entità. Utilizzando una L.A.C. rigida durante la
+								notte, è possibile modificare il profilo corneale al fine di poter stare senza
+								occhiali durante il giorno avendo la massima acutezza visiva possibile.
+							</Text>
+						</Box>
 					</Box>
 				</Box>
 			</Box>
