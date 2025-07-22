@@ -1,6 +1,6 @@
 import { Box, Image, Text, Button, useSlotRecipe, Icon as ChakraIcon, Flex } from '@chakra-ui/react'
 import React from 'react'
-import image_src from '../assets/photos/01.jpg'
+import image_src from '../assets/photos/11.jpg'
 import image_src_2 from '../assets/photos/3.jpg'
 import image_src_snellen from '../assets/other/snellen.jpg'
 import image_src_lens from '../assets/other/lens.jpg'
