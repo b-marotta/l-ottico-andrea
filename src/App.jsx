@@ -9,8 +9,9 @@ import Footer from './components/footer'
 import CookieBanner from './components/cookie-banner'
 import { Box } from '@chakra-ui/react'
 import main_image_src from './assets/photos/10.jpg'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Analytics } from '@vercel/analytics/next'
+// Replaced Next.js specific imports with framework-agnostic versions for Vite
+import { SpeedInsights } from '@vercel/speed-insights/react'
+import { Analytics } from '@vercel/analytics/react'
 
 const Home = lazy(() => import('./pages/home'))
 const ChiSiamo = lazy(() => import('./pages/chi-siamo'))
