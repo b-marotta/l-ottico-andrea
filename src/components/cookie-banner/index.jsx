@@ -1,16 +1,15 @@
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Button, Flex, HStack, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-const consentCookie = () => localStorage.getItem('cookieConsent') || false
+import { getCookieConsent, setCookieConsent } from '../../utils/analytics'
 
 const CookieBanner = () => {
-	const consent = consentCookie()
+	const consent = getCookieConsent()
 
-	const [isVisible, setIsVisible] = useState(!consent)
+	const [isVisible, setIsVisible] = useState(consent === null)
 
-	const acceptCookies = () => {
-		localStorage.setItem('cookieConsent', 'true')
+	const handleConsent = (value) => {
+		setCookieConsent(value)
 		setIsVisible(false)
 	}
 
@@ -35,8 +34,8 @@ const CookieBanner = () => {
 			transition="opacity 0.5s"
 		>
 			<Text textStyle={{ base: 'sm', lg: 'md' }}>
-				Questo sito utilizza cookie tecnici necessari per il funzionamento base. Per maggiori
-				informazioni, consulta la nostra{' '}
+				Questo sito utilizza cookie tecnici necessari e, solo con il tuo consenso, Google Analytics
+				per statistiche anonime di navigazione. Per maggiori informazioni, consulta la nostra{' '}
 				<Link href="/privacy-policy">
 					<Text as={'span'} textDecor={'underline'}>
 						Policy sulla Privacy
@@ -44,9 +43,14 @@ const CookieBanner = () => {
 				</Link>
 				.
 			</Text>
-			<Button variant={{ base: 'unset', lg: 'outline' }} onClick={acceptCookies}>
-				Chiudi
-			</Button>
+			<HStack gap={3}>
+				<Button variant={{ base: 'unset', lg: 'outline' }} onClick={() => handleConsent('false')}>
+					Rifiuta
+				</Button>
+				<Button colorPalette="blue" onClick={() => handleConsent('true')}>
+					Accetta
+				</Button>
+			</HStack>
 		</Flex>
 	)
 }

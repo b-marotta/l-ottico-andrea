@@ -1,9 +1,9 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/header'
 import { Helmet } from 'react-helmet'
 import { SITE_DESCRIPTION, SITE_TITLE } from './utils/global.variables'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import BottomRightOverlay from './components/bottom-right-overlay'
 import Footer from './components/footer'
 import CookieBanner from './components/cookie-banner'
@@ -12,12 +12,60 @@ import main_image_src from './assets/photos/10.jpg'
 // Replaced Next.js specific imports with framework-agnostic versions for Vite
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
+import {
+	COOKIE_CONSENT_EVENT,
+	getCookieConsent,
+	initAnalytics,
+	trackPageView,
+} from './utils/analytics'
 
 const Home = lazy(() => import('./pages/home'))
 const ChiSiamo = lazy(() => import('./pages/chi-siamo'))
 const Servizi = lazy(() => import('./pages/servizi'))
 const Prodotti = lazy(() => import('./pages/prodotti'))
 const PrivacyPolicy = lazy(() => import('./pages/privacy-policy'))
+
+const AnalyticsTracker = () => {
+	const location = useLocation()
+	const [hasConsent, setHasConsent] = useState(getCookieConsent() === 'true')
+
+	useEffect(() => {
+		const syncConsent = () => {
+			setHasConsent(getCookieConsent() === 'true')
+		}
+
+		window.addEventListener(COOKIE_CONSENT_EVENT, syncConsent)
+		window.addEventListener('storage', syncConsent)
+
+		return () => {
+			window.removeEventListener(COOKIE_CONSENT_EVENT, syncConsent)
+			window.removeEventListener('storage', syncConsent)
+		}
+	}, [])
+
+	useEffect(() => {
+		if (!hasConsent) {
+			return
+		}
+
+		initAnalytics()
+	}, [hasConsent])
+
+	useEffect(() => {
+		if (!hasConsent) {
+			return
+		}
+
+		trackPageView({
+			page_path: location.pathname + location.search,
+			page_title: document.title,
+			page_location: window.location.href,
+		})
+	}, [hasConsent, location.pathname, location.search])
+
+	return null
+}
+
 const App = () => {
 	return (
 		<Router>
@@ -62,6 +110,7 @@ const App = () => {
 						rel="stylesheet"
 					/>
 				</Helmet>
+				<AnalyticsTracker />
 				<CookieBanner />
 				<BottomRightOverlay />
 				<SpeedInsights />
