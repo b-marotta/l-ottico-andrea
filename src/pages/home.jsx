@@ -194,7 +194,7 @@ const Home = () => {
 					</Text>
 					<Box {...styles.mapInfoBox}>
 						<Text {...styles.infoTitle}>📌 Posizione</Text>
-						<Text>Via Federico de Roberto</Text>
+						<Text>Via Federico de Roberto - angolo Via Pascarella</Text>
 						<Text>20157 Milano</Text>
 					</Box>
 					<Box {...styles.mapInfoBox}>
